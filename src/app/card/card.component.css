@@ -1,0 +1,38 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.justify-content-between{
+  justify-content: space-between;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Gölgelendirme efekti */
+  transition: transform 0.2s, background-color 0.2s, border-color 0.2s; /* Geçiş efekleri */
+  cursor: pointer;
+
+
+}
+
+.card:hover {
+  transform: scale(1.05); /* Mouse üzerine gelince büyüme efekti */
+  background-color: #f0f0f0; /* Mouse üzerine gelince arka plan rengi değişimi */
+  border: 2px solid #3498db; /* Mouse üzerine gelince çerçeve efekti */
+}
+.anasayfa-content {
+  background-color: white;
+
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+.buton {
+  text-align: center;
+  padding: 15px;;
+}
