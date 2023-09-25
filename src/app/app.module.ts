@@ -5,9 +5,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './banner/banner.component';
-
 import { SignComponent } from './sign/sign.component';
-
 import { CardComponent } from './card/card.component';
 import { ContentComponent } from './content/content.component';
 import { IlanComponent } from './ilan/ilan.component';
@@ -15,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { AnasayfaComponent } from './anasayfa/anasayfa.component';
 import { IlanlarComponent } from './ilanlar/ilanlar.component';
 import { GirisComponent } from './giris/giris.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -30,6 +29,7 @@ import { GirisComponent } from './giris/giris.component';
     AnasayfaComponent,
     IlanlarComponent,
     GirisComponent,
+    ProfileComponent
 
   ],
   imports: [
