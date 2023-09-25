@@ -36,3 +36,7 @@
   text-align: center;
   padding: 15px;;
 }
+.btn:hover {
+  background-color: #313240;
+  transition: transform 0.5s;
+}
