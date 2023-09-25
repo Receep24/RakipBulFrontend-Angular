@@ -1,0 +1,23 @@
+
+.card-image {
+  width: 150px; /* Resmin genişliği */
+  height: 150px; /* Resmin yüksekliği */
+  overflow: hidden; /* Taşan içeriği gizle */
+  border-radius: 50%; /* Yuvarlak köşeler için border-radius kullanın */
+  margin: 0 auto; /* Resmi yatay olarak ortala */
+  text-align: center; /* İçerikleri yatay olarak ortala */
+}
+
+.card-image img {
+  width: 100%; /* Resmi içindeki div'e sığdır */
+  height: auto; /* Oranları koru */
+  display: block; /* Inline özelliklerini kaldır */
+}
+
+
+
+
+
+
+
+

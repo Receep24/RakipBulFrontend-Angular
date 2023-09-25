@@ -1,0 +1,36 @@
+#logo {
+  color: #fff;
+
+}
+
+#nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.button.primary {
+  background-color: #ef0505; /* Button background color */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+#header {
+  background-color:#313240;
+  opacity: 0.8;
+  height: 75px;
+}
+
+#header #nav ul  {
+  padding: 10px;
+}
+#header #logo {
+  padding: 10px;
+}
+span img {
+  height: 6vh;
+  width: 10vh;
+  margin: auto;
+}
+
+
