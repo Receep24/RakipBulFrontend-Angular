@@ -1,0 +1,24 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s; /* Büyüme animasyonu için geçiş süresi */
+  border-radius: 30px; /* Köşeleri kavisli yapar, değeri istediğiniz gibi ayarlayabilirsiniz */
+  border: 1px solid #7b8bb4; /* Kartın etrafına kenarlık ekler */
+  background-color: #fff;
+  cursor: pointer;
+
+}
+
+/* Fare üzerine gelince büyümeyi tanımlamak için */
+.card:hover {
+  transform: scale(1.05); /* Kutuları 1.05 katına büyütür */
+}
+.card .card-img-top {
+  border-radius: 2%; /* Resimleri tam yuvarlak yapar */
+}
+.card-img-top {
+
+  max-width: 95%; /* Resmi kartın içine sığacak şekilde maksimum genişlik yapar */
+  height: auto; /* Otomatik yükseklik ayarı, oranı korur */
+  display: block; /* İç içe geçme sorunlarını giderir */
+  margin: 3% auto; /* Resmi yatayda ortalar */
+}
