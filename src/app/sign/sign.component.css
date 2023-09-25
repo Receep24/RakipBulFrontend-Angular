@@ -1,0 +1,33 @@
+
+
+ /* Sign Up sekmesi aktif olduğunda mavi olacak */
+ #signUp-tab.active {
+    background-color: blue;
+    color: white; /* Mavi arka plan üzerine beyaz yazı rengi */
+  }
+
+
+  /* Sign In sekmesi aktif olduğunda mavi olacak */
+  #signIn-tab.active {
+    background-color: blue;
+    color: white; /* Mavi arka plan üzerine beyaz yazı rengi */
+  }
+
+  select.form-select option {
+    background-color: white;
+    color: gray;
+  }
+
+  .container {
+    width: 50%; /* Genişlik yüzdesi */
+    height: 75%; /* Yükseklik yüzdesi */
+    /* Diğer stil kuralları */
+  }
+
+  .maindiv {
+    height: 100px;
+  }
+
+  .card {
+    height: 600px;
+  }

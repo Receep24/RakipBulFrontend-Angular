@@ -1,0 +1,141 @@
+
+<div class="maindiv d-flex d-flex justify-content-center mt-2">
+
+
+  <!-- <img src="https://media.istockphoto.com/id/1141191007/vector/sports-set-of-athletes-of-various-sports-disciplines-isolated-vector-silhouettes-run-soccer.jpg?s=612x612&w=0&k=20&c=SEabW4SHZ7blMHJPxZNSTl_anOMHO3whQI7HIMxFpSg=" alt="" class="mt-2"> -->
+
+  <div class="container mt-2 " >
+    <div class="card p-3 opacity-100 ">
+        <ul class="nav nav-tabs col-12  mb-3 " id="myTabs" role="tablist">
+          <li class="nav-item col-6" role="presentation">
+          <a class="nav-link active" id="signIn-tab" data-bs-toggle="tab" href="#signIn" role="tab"
+            aria-controls="signIn" aria-selected="true">Sign In</a>
+        </li>
+        <li class="nav-item col-6" role="presentation">
+          <a class="nav-link" id="signUp-tab" data-bs-toggle="tab" href="#signUp" role="tab" aria-controls="signUp"
+            aria-selected="false">Sign Up</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabsContent">
+        <div class="tab-pane fade show active" id="signIn" role="tabpanel" aria-labelledby="signIn-tab">
+          <!-- Sign In Form  -->
+          <form>
+            <div class="mb-3">
+              <label for="username" class="form-label text-secondary fs-6">Username</label>
+              <input type="username" class="form-control border border-secondary-subtle" id="username">
+              <div class="mb-3">
+                <label for="password" class="form-label text-secondary fs-6">Password</label>
+                <input type="password" class="form-control border border-secondary-subtle" id="password">
+              </div>
+            </div>
+            <div class="mb-3 container d-flex justify-content-center">
+              <button type="submit" class="btn btn-primary align-items-center" style="width: 400px;">Sign In</button>
+            </div>
+            <div class="mb-3 container d-flex justify-content-center">
+              <label for="or" class="form-label text-secondary fs-6">veya</label>
+            </div>
+            <div class="mb-3 container d-flex justify-content-center">
+              <button id="googleBtn" type="button" class="btn align-items-center" style="width: 400px; background-color: #98eb12; color: #ffff;">
+              <i class="fab fa-google"></i> Google</button>
+            </div>
+            <div class="mb-3 container d-flex justify-content-center">
+              <button id="facebookBtn" type="button" class="btn align-items-center" style="width: 400px; background-color: #4464A6; color: #ffff;">
+                <i class="fab fa-facebook-f"></i> Facebook</button>
+            </div>
+            <div class="mb-3 container d-flex justify-content-center">
+              <button id="twitterBtn" type="button" class="btn align-items-center" style="width: 400px; background-color: #0098C2; color: #ffff;">
+                <i class="fab fa-twitter"></i> Twitter</button>
+            </div>
+            <div class="mb-3 container d-flex justify-content-center">
+              <button id="githubBtn" type="button" class="btn btn-dark align-items-center" style="width: 400px;">
+                <i class="fab fa-github"></i> Github</button>
+            </div>
+          </form>
+        </div>
+        <div class="tab-pane fade" id="signUp" role="tabpanel" aria-labelledby="signUp-tab">
+           <!-- Sign Up Form  -->
+          <form>
+            <div class="mb-3 row">
+              <div class="mb-3 col">
+                <label for="firstname" class="form-label text-secondary fs-6">First Name</label>
+                <input type="text" class="form-control border border-secondary-subtle" id="firstname">
+              </div>
+
+              <div class="mb-3 col">
+                <label for="lastname" class="form-label text-secondary fs-6">Last Name</label>
+                <input type="text" class="form-control border border-secondary-subtle" id="lastname">
+              </div>
+              
+              <div class="mb-3 col">
+                <label for="phonenumber" class="form-label text-secondary fs-6">Phone Number</label>
+                <input type="text" class="form-control border border-secondary-subtle" id="phonenumber">
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+            <div class="mb-3 col">
+              <label for="birthdate" class="form-label text-secondary fs-6">Birthdate</label>
+              <input type="date" class="form-control border border-secondary-subtle " id="birthdate">
+            </div>
+
+            <div class="mb-3 col">
+              <label for="gender" class="form-label text-secondary fs-6">Gender</label>
+              <select class="form-select border border-secondary-subtle" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+            <div class="mb-3 row">
+            <div class="mb-3 col">
+              <label for="username" class="form-label text-secondary fs-6">Username</label>
+              <input type="text" class="form-control border border-secondary-subtle" id="username">
+            </div>
+
+            <div class="mb-3 col">
+              <label for="email" class="form-label text-secondary fs-6">Email</label>
+              <input type="email" class="form-control border border-secondary-subtle" id="email">
+            </div>
+            </div>
+
+            <div class="mb-3 row">
+              <div class="mb-3 col">
+                <label for="password" class="form-label text-secondary fs-6">Password</label>
+                <input type="password" class="form-control border border-secondary-subtle" id="password">
+              </div>
+
+              <div class="mb-3 col">
+                <label for="confirmpassword" class="form-label text-secondary fs-6"> Confirm Password</label>
+                <input type="password" class="form-control border border-secondary-subtle"
+                  id="confirmpassword">
+              </div>
+            </div>
+
+              <div class=" container d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary align-items-center" style="width: 400px;">Sign Up</button>
+              </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+</div>
+
+  <script>
+    var myTabs = new bootstrap.Tab(document.getElementById('signIn-tab'));
+    myTabs.show();
+
+    function showSignIn() {
+      var signInTab = new bootstrap.Tab(document.getElementById('signIn-tab'));
+      signInTab.show();
+    }
+
+    function showSignUp() {
+      var signUpTab = new bootstrap.Tab(document.getElementById('signUp-tab'));
+      signUpTab.show();
+    }
+  </script>
