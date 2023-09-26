@@ -3,7 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { IlanComponent } from './ilan/ilan.component';
 import { AnasayfaComponent } from './anasayfa/anasayfa.component';
 import { GirisComponent } from './giris/giris.component';
+
 import { EtkinlikComponent } from './etkinlik/etkinlik.component';
+
+import { SignComponent } from './sign/sign.component';
+import { ProfileComponent } from './profile/profile.component';
+
+
+
 
 
 const routes: Routes = [
@@ -11,9 +18,9 @@ const routes: Routes = [
   { path: "ilanlar", component: IlanComponent},
   { path: "anasayfa", component: AnasayfaComponent},
   { path: "giris", component: GirisComponent},
-  {path: "etkinlik",component: EtkinlikComponent}
 
-
+  {path: "etkinlik",component: EtkinlikComponent},
+  {path:"profildetail",component:ProfileComponent}
 ];
 
 @NgModule({

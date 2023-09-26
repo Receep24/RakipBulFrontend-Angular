@@ -16,6 +16,11 @@
   text-decoration: none;
 }
 #header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; 
   background-color:#313240;
   opacity: 0.8;
   height: 75px;
