@@ -5,6 +5,7 @@ import { AnasayfaComponent } from './anasayfa/anasayfa.component';
 import { GirisComponent } from './giris/giris.component';
 import { EtkinlikComponent } from './etkinlik/etkinlik.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MainComponent } from './admin/main/main.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: "anasayfa", component: AnasayfaComponent},
   { path: "giris", component: GirisComponent},
   {path: "etkinlik",component: EtkinlikComponent},
-  {path:"profildetail",component:ProfileComponent}
+  {path:"profildetail",component:ProfileComponent},
+  {path:"admin/main",component:MainComponent},
 ];
 
 @NgModule({

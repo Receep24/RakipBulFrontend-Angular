@@ -17,6 +17,8 @@ import { GirisComponent } from './giris/giris.component';
 import { EtkinlikComponent } from './etkinlik/etkinlik.component';
 
 import { ProfileComponent } from './profile/profile.component';
+import { AdminComponent } from './admin/admin.component';
+import { MainComponent } from './admin/main/main.component';
 
 
 
@@ -36,7 +38,9 @@ import { ProfileComponent } from './profile/profile.component';
 
     EtkinlikComponent,
 
-    ProfileComponent
+    ProfileComponent,
+    AdminComponent,
+    MainComponent
 
 
   ],
