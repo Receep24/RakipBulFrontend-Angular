@@ -1,0 +1,10 @@
+/* Resmin genişliğini ve yüksekliğini ayarlayın */
+.card-img-top {
+    width: 200px; /* Örnek olarak 200 piksel genişlik */
+    height: 150px; /* Örnek olarak 150 piksel yükseklik */
+    display: block !important; 
+}
+.card1{
+    display: flex !important;
+}
+

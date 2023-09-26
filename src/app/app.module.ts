@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { AnasayfaComponent } from './anasayfa/anasayfa.component';
 import { IlanlarComponent } from './ilanlar/ilanlar.component';
 import { GirisComponent } from './giris/giris.component';
+import { EtkinlikComponent } from './etkinlik/etkinlik.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { GirisComponent } from './giris/giris.component';
     AnasayfaComponent,
     IlanlarComponent,
     GirisComponent,
+    EtkinlikComponent,
 
   ],
   imports: [
