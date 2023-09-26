@@ -1,5 +1,3 @@
-
-
  /* Sign Up sekmesi aktif olduğunda mavi olacak */
  #signUp-tab.active {
     background-color: blue;
@@ -31,3 +29,28 @@
   .card {
     height: 600px;
   }
+
+  /*- Video için-*/
+  .video-arayuz {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+  
+
+.usernamediv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.passworddiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

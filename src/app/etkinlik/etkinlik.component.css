@@ -8,3 +8,6 @@
     display: flex !important;
 }
 
+.container {
+    margin-top: 100px; /* Navbar'ın altındaki boşluk miktarı, ihtiyaca göre ayarlayın */
+}

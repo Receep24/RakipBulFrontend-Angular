@@ -1,9 +1,13 @@
+<video autoplay loop muted class="video-arayuz">
+  <source src="https://cdn.pixabay.com/vimeo/407130740/tenis-kortu-35265.mp4?width=1280&hash=1e47da56fc53d112f66c1b094e619099a53432fb" type="video/mp4">
+</video>  
 
-<div style="position: absolute; width: 100%; top: 20%; left: 50%; transform: translate(-50%, -50%); " class="maindiv d-flex d-flex justify-content-center">
 
-  <!-- <img src="https://media.istockphoto.com/id/1141191007/vector/sports-set-of-athletes-of-various-sports-disciplines-isolated-vector-silhouettes-run-soccer.jpg?s=612x612&w=0&k=20&c=SEabW4SHZ7blMHJPxZNSTl_anOMHO3whQI7HIMxFpSg=" alt="" class="mt-2"> -->
+<div style="position: absolute; width: 100%; top: 20%; left: 50%; transform: translate(-50%, -50%); opacity: 0.8;" class="maindiv d-flex justify-content-center">
+<!-- <img src="https://cdn.pixabay.com/photo/2020/03/10/16/47/moon-4919501_640.jpg" alt="" class="mt-2" style="width: 50%; height: 600px;"> -->
 
-  <div class="container mt-2 " >
+  <div class="container mt-2">
+
     <div class="card p-3 opacity-100 ">
         <ul class="nav nav-tabs col-12  mb-3 " id="myTabs" role="tablist">
           <li class="nav-item col-6" role="presentation">
@@ -19,14 +23,16 @@
         <div class="tab-pane fade show active" id="signIn" role="tabpanel" aria-labelledby="signIn-tab">
           <!-- Sign In Form  -->
           <form>
-            <div class="mb-3">
-              <label for="username" class="form-label text-secondary fs-6">Username</label>
-              <input type="username" class="form-control border border-secondary-subtle" id="username">
-              <div class="mb-3">
-                <label for="password" class="form-label text-secondary fs-6">Password</label>
-                <input type="password" class="form-control border border-secondary-subtle" id="password">
+              <div class="mb-3 login">
+               <div class="usernamediv mb-3 w-100">
+                <label for="username" class="form-label text-secondary fs-6">Username</label>
+                <input type="username" class="form-control border border-secondary-subtle w-75" id="username">
+               </div>
+                <div class="passworddiv mb-3 w-100">
+                  <label for="password" class="form-label text-secondary fs-6">Password</label>
+                  <input type="password" class="form-control border border-secondary-subtle w-75" id="password">
+                </div>
               </div>
-            </div>
             <div class="mb-3 container d-flex justify-content-center">
               <button type="submit" class="btn btn-primary align-items-center" style="width: 400px;">Sign In</button>
             </div>

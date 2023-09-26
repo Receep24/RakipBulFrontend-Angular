@@ -38,4 +38,7 @@ span img {
   margin: auto;
 }
 
-
+#logo a {
+  text-decoration: none; /* Metin altındaki çizgiyi kaldırır */
+  font-size: 32px;
+}
