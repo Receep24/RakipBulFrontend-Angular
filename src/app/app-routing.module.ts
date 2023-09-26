@@ -8,6 +8,7 @@ import { EtkinlikComponent } from './etkinlik/etkinlik.component';
 
 import { SignComponent } from './sign/sign.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MainComponent } from './admin/main/main.component';
 
 
 
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: "giris", component: GirisComponent},
 
   {path: "etkinlik",component: EtkinlikComponent},
-  {path:"profildetail",component:ProfileComponent}
+  {path:"profildetail",component:ProfileComponent},
+  {path:"admin/main",component:MainComponent},
 ];
 
 @NgModule({
