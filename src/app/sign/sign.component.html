@@ -25,16 +25,16 @@
           <form>
               <div class="mb-3 login">
                <div class="usernamediv mb-3 w-100">
-                <label for="username" class="form-label text-secondary fs-6">Username</label>
-                <input type="username" class="form-control border border-secondary-subtle w-75" id="username">
+                <label for="username" class="form-label text-secondary fs-6">Username</label>                
+                <input [(ngModel)]="loginRequest.UserName" [ngModelOptions]="{standalone: true}" name="UserName" type="text" class="fform-control border border-secondary-subtle w-75" placeholder="Email">
                </div>
                 <div class="passworddiv mb-3 w-100">
                   <label for="password" class="form-label text-secondary fs-6">Password</label>
-                  <input type="password" class="form-control border border-secondary-subtle w-75" id="password">
+                  <input [(ngModel)]="loginRequest.Password" [ngModelOptions]="{standalone: true}" name="UserName" type="text" class="fform-control border border-secondary-subtle w-75" placeholder="Email">
                 </div>
               </div>
-            <div class="mb-3 container d-flex justify-content-center">
-              <button type="submit" class="btn btn-primary align-items-center" style="width: 400px;">Sign In</button>
+            <div class="mb-3 container d-flex justify-content-center">              
+              <button (click)="login()" type="button" class="btn btn-primary align-items-center" style="width: 400px;">Giriş yap</button>
             </div>
             <div class="mb-3 container d-flex justify-content-center">
               <label for="or" class="form-label text-secondary fs-6">veya</label>

@@ -19,6 +19,8 @@ import { EtkinlikComponent } from './etkinlik/etkinlik.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminComponent } from './admin/admin.component';
 import { MainComponent } from './admin/main/main.component';
+import {  HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -35,9 +37,7 @@ import { MainComponent } from './admin/main/main.component';
     AnasayfaComponent,
     IlanlarComponent,
     GirisComponent,
-
     EtkinlikComponent,
-
     ProfileComponent,
     AdminComponent,
     MainComponent
@@ -47,7 +47,9 @@ import { MainComponent } from './admin/main/main.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
