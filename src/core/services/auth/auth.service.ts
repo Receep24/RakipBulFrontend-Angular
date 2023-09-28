@@ -13,6 +13,7 @@ import { TokenResponse } from '../../models/response/token-response.model';
 import { User } from '../../models/user.model';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { RegisterRequest } from 'src/core/models/request/register-request.model';
 
 @Injectable({
   providedIn: 'root',
@@ -92,9 +93,6 @@ export class AuthService {
       .refreshToken(<string>sessionStorage.getItem('refresh_token'))
       .toPromise();
 
-
-
-
     if (refreshTokenResponse!.status == ResponseStatus.Ok) {
       this.setToken(refreshTokenResponse!.data);
 
@@ -119,4 +117,21 @@ logOut fonksiyonu, sessionStorage'deki tüm verileri temizler ve currentUserSubj
     sessionStorage.clear();
     this.currentUserSubject.next(null);
   }
+
+  public async register(request: RegisterRequest): Promise<ResponseStatus> {
+
+    const registerResponse = await this.apiService.register(request).toPromise();
+  
+    let status = registerResponse!.status;
+  
+  
+    if (status == ResponseStatus.Ok) {
+      this.setToken(registerResponse!.data);
+      sessionStorage.setItem('current_user', JSON.stringify({}));
+      this.currentUserSubject.next({} as User);
+    }
+  
+    return status;
+  }
+  
 }

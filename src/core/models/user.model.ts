@@ -1,13 +1,23 @@
 export interface User {
-  id: number;
-  tc_no: string;
-  UserName: string;
+  UserId: number;
   Email: string;
-  phone: string;
+  UserName: string;
+  FirstName: string;
+  LastName: string;
+  Age: number;
+  UserImage: string;
+  PhoneNumber: string;
+  Password: string;
+  gender: Gender;
   userType: UserType;
 }
 
 export enum UserType {
   Admin,
   User,
+}
+
+export enum Gender {
+  Male,
+  Female,
 }

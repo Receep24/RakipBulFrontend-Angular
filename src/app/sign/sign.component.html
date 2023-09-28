@@ -63,24 +63,25 @@
             <div class="mb-3 row">
               <div class="mb-3 col">
                 <label for="firstname" class="form-label text-secondary fs-6">First Name</label>
-                <input type="text" class="form-control border border-secondary-subtle" id="firstname">
+                <input [(ngModel)]="registerRequest.FirstName" [ngModelOptions]="{standalone: true}" type="text" class="form-control border border-secondary-subtle" id="firstname">
+             
               </div>
 
               <div class="mb-3 col">
                 <label for="lastname" class="form-label text-secondary fs-6">Last Name</label>
-                <input type="text" class="form-control border border-secondary-subtle" id="lastname">
+                <input [(ngModel)]="registerRequest.LastName" [ngModelOptions]="{standalone: true}" type="text" class="form-control border border-secondary-subtle" id="lastname">
               </div>
 
               <div class="mb-3 col">
                 <label for="phonenumber" class="form-label text-secondary fs-6">Phone Number</label>
-                <input type="text" class="form-control border border-secondary-subtle" id="phonenumber">
+                <input [(ngModel)]="registerRequest.PhoneNumber" [ngModelOptions]="{standalone: true}" type="text" class="form-control border border-secondary-subtle" id="phonenumber">
               </div>
             </div>
 
             <div class="mb-3 row">
             <div class="mb-3 col">
               <label for="birthdate" class="form-label text-secondary fs-6">Birthdate</label>
-              <input type="date" class="form-control border border-secondary-subtle " id="birthdate">
+              <input  type="date" class="form-control border border-secondary-subtle " id="birthdate">
             </div>
 
             <div class="mb-3 col">
@@ -95,19 +96,19 @@
             <div class="mb-3 row">
             <div class="mb-3 col">
               <label for="username" class="form-label text-secondary fs-6">Username</label>
-              <input type="text" class="form-control border border-secondary-subtle" id="username">
+              <input [(ngModel)]="registerRequest.UserName" [ngModelOptions]="{standalone: true}" type="text" class="form-control border border-secondary-subtle" id="username">
             </div>
 
             <div class="mb-3 col">
               <label for="email" class="form-label text-secondary fs-6">Email</label>
-              <input type="email" class="form-control border border-secondary-subtle" id="email">
+              <input [(ngModel)]="registerRequest.Email" [ngModelOptions]="{standalone: true}" type="email" class="form-control border border-secondary-subtle" id="email">
             </div>
             </div>
 
             <div class="mb-3 row">
               <div class="mb-3 col">
                 <label for="password" class="form-label text-secondary fs-6">Password</label>
-                <input type="password" class="form-control border border-secondary-subtle" id="password">
+                <input [(ngModel)]="registerRequest.Password" [ngModelOptions]="{standalone: true}" type="password" class="form-control border border-secondary-subtle" id="password">
               </div>
 
               <div class="mb-3 col">
@@ -118,7 +119,7 @@
             </div>
 
               <div class=" container d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary align-items-center" style="width: 400px;">Sign Up</button>
+                <button (click)="register()" type="submit" class="btn btn-primary align-items-center" style="width: 400px;">Sign Up</button>
               </div>
 
           </form>
