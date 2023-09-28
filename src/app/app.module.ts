@@ -21,6 +21,7 @@ import { AdminComponent } from './admin/admin.component';
 import { MainComponent } from './admin/main/main.component';
 import {  HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CommentComponent } from './comment/comment.component';
 
 
 
@@ -40,7 +41,8 @@ import { FormsModule } from '@angular/forms';
     EtkinlikComponent,
     ProfileComponent,
     AdminComponent,
-    MainComponent
+    MainComponent,
+    CommentComponent
 
 
   ],
