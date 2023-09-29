@@ -1,6 +1,6 @@
 <video autoplay loop muted class="video-arayuz">
   <source src="./assets/video/tennisvideo.mp4" type="video/mp4">
-</video>  
+</video>
 
 
 <div style="position: absolute; width: 100%; top: 20%; left: 50%; transform: translate(-50%, -50%); opacity: 0.6;" class="maindiv d-flex justify-content-center">
@@ -25,7 +25,7 @@
           <form>
               <div class="mb-3 login">
                <div class="usernamediv mb-3 w-100">
-                <label for="username" class="form-label text-secondary fs-6">Username</label>                
+                <label for="username" class="form-label text-secondary fs-6">Username</label>
                 <input [(ngModel)]="loginRequest.UserName" [ngModelOptions]="{standalone: true}" name="UserName" type="text" class="fform-control border border-secondary-subtle w-75" placeholder="Email">
                </div>
                 <div class="passworddiv mb-3 w-100">
@@ -33,7 +33,7 @@
                   <input [(ngModel)]="loginRequest.Password" [ngModelOptions]="{standalone: true}" name="UserName" type="text" class="fform-control border border-secondary-subtle w-75" placeholder="Email">
                 </div>
               </div>
-            <div class="mb-3 container d-flex justify-content-center">              
+            <div class="mb-3 container d-flex justify-content-center">
               <button (click)="login()" type="button" class="btn btn-primary align-items-center" style="width: 400px;">Giriş yap</button>
             </div>
             <div class="mb-3 container d-flex justify-content-center">
@@ -64,7 +64,7 @@
               <div class="mb-3 col">
                 <label for="firstname" class="form-label text-secondary fs-6">First Name</label>
                 <input [(ngModel)]="registerRequest.FirstName" [ngModelOptions]="{standalone: true}" type="text" class="form-control border border-secondary-subtle" id="firstname">
-             
+
               </div>
 
               <div class="mb-3 col">
