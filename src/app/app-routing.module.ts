@@ -5,8 +5,8 @@ import { AnasayfaComponent } from './anasayfa/anasayfa.component';
 import { GirisComponent } from './giris/giris.component';
 import { EtkinlikComponent } from './etkinlik/etkinlik.component';
 import { ProfileComponent } from './profile/profile.component';
-import { MainComponent } from './admin/main/main.component';
 import { CommentComponent } from './comment/comment.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 const routes: Routes = [
@@ -16,8 +16,8 @@ const routes: Routes = [
   { path: "giris", component: GirisComponent},
   {path: "etkinlik",component: EtkinlikComponent},
   {path:"profildetail",component:ProfileComponent},
-  {path:"admin/main",component:MainComponent},
   {path:"comment",component:CommentComponent},
+  {path:"admin",component:AdminComponent},
 
 ];
 

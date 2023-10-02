@@ -15,11 +15,12 @@ import { IlanlarComponent } from './ilanlar/ilanlar.component';
 import { GirisComponent } from './giris/giris.component';
 import { EtkinlikComponent } from './etkinlik/etkinlik.component';
 import { ProfileComponent } from './profile/profile.component';
-import { AdminComponent } from './admin/admin.component';
-import { MainComponent } from './admin/main/main.component';
 import {  HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommentComponent } from './comment/comment.component';
+import { AdminComponent } from './admin/admin.component';
+
+
 
 
 
@@ -38,10 +39,8 @@ import { CommentComponent } from './comment/comment.component';
     GirisComponent,
     EtkinlikComponent,
     ProfileComponent,
+    CommentComponent,
     AdminComponent,
-    MainComponent,
-    CommentComponent
-
 
   ],
   imports: [

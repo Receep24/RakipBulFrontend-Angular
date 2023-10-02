@@ -1,74 +1,14 @@
 <app-navbar></app-navbar>
 <div class="container mb-5" style="margin-top: 100px;">
-  <div class="row row-cols-1 row-cols-md-2 g-4 ">
-    <div class="col">
-      <div class="card">
+  <div class="row row-cols-1 row-cols-md-2 g-4" >
+    <div class="col" *ngFor="let advert of adverts" >
+      <div class="card" >
         <img src="" class="card-img-top" alt="SportImage">
         <div class="card-body">
-          <h5 class="card-title">SportName</h5>
-          <P>UserID</P>
-          <p class="card-text">AdvertText</p>
-          <P>Adres</P>
-          <a style="color: aliceblue;" class="btn bg-primary" href="#">Teklif Ver</a>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="" class="card-img-top" alt="SportImage">
-        <div class="card-body">
-          <h5 class="card-title">SportName</h5>
-          <P>UserID</P>
-          <p class="card-text">AdvertText</p>
-          <P>Adres</P>
-          <a style="color: aliceblue;" class="btn bg-primary" href="#">Teklif Ver</a>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="" class="card-img-top" alt="SportImage">
-        <div class="card-body">
-          <h5 class="card-title">SportName</h5>
-          <P>UserID</P>
-          <p class="card-text">AdvertText</p>
-          <P>Adres</P>
-          <a style="color: aliceblue;" class="btn bg-primary" href="#">Teklif Ver</a>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="" class="card-img-top" alt="SportImage">
-        <div class="card-body">
-          <h5 class="card-title">SportName</h5>
-          <P>UserID</P>
-          <p class="card-text">AdvertText</p>
-          <P>Adres</P>
-          <a style="color: aliceblue;" class="btn bg-primary" href="#">Teklif Ver</a>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="" class="card-img-top" alt="SportImage">
-        <div class="card-body">
-          <h5 class="card-title">SportName</h5>
-          <P>UserID</P>
-          <p class="card-text">AdvertText</p>
-          <P>Adres</P>
-          <a style="color: aliceblue;" class="btn bg-primary" href="#">Teklif Ver</a>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="" class="card-img-top" alt="SportImage">
-        <div class="card-body">
-          <h5 class="card-title">SportName</h5>
-          <P>UserID</P>
-          <p class="card-text">AdvertText</p>
-          <P>Adres</P>
+          <h5 class="card-title">{{advert.advertText}}</h5>
+          <P>{{advert.userID}}</P>
+          <p class="card-text">{{advert.sportID}}</p>
+          <P>{{advert.adressID}}</P>
           <a style="color: aliceblue;" class="btn bg-primary" href="#">Teklif Ver</a>
         </div>
       </div>
