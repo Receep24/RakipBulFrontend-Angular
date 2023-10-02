@@ -30,7 +30,7 @@
                </div>
                 <div class="passworddiv mb-3 w-100">
                   <label for="password" class="form-label text-secondary fs-6">Password</label>
-                  <input [(ngModel)]="loginRequest.Password" [ngModelOptions]="{standalone: true}" name="UserName" type="text" class="fform-control border border-secondary-subtle w-75" placeholder="Email">
+                  <input [(ngModel)]="loginRequest.Password" [ngModelOptions]="{standalone: true}" name="Password" type="password" class="fform-control border border-secondary-subtle w-75" placeholder="Password">
                 </div>
               </div>
             <div class="mb-3 container d-flex justify-content-center">              
@@ -87,8 +87,7 @@
               <label for="gender" class="form-label text-secondary fs-6">Gender</label>
               <select class="form-select border border-secondary-subtle" id="gender">
                 <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
+                <option value="female">Female</option>                
               </select>
             </div>
           </div>

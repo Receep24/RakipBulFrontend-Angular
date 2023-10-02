@@ -1,13 +1,23 @@
-export interface User {
-  id: number;
-  tc_no: string;
-  UserName: string;
+import { Entity } from "./entity.model";
+
+export interface User extends Entity<number> {
   Email: string;
-  phone: string;
-  userType: UserType;
+  UserName: string;
+  FirstName: string;
+  LastName: string;
+  Age: number;
+  UserImage: string ;
+  phoneNumber: string;
+  Password:string;
+  UserType: UserType;
+  Gender: Gender;  
 }
 
 export enum UserType {
   Admin,
   User,
+}
+export enum Gender {
+  Male,
+  Female,
 }
