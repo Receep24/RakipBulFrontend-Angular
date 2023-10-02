@@ -8,8 +8,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { MainComponent } from './admin/main/main.component';
 import { CommentComponent } from './comment/comment.component';
 
-
 const routes: Routes = [
+
   { path: "", component:AnasayfaComponent},
   { path: "ilanlar", component: IlanComponent},
   { path: "anasayfa", component: AnasayfaComponent},
@@ -19,10 +19,11 @@ const routes: Routes = [
   {path:"admin/main",component:MainComponent},
   {path:"comment",component:CommentComponent},
 
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

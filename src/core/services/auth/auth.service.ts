@@ -1,6 +1,4 @@
-
 //AuthService, kullanıcı kimlik doğrulama işlemlerini yönetmek ve kullanıcı oturum bilgilerini saklamak için kullanılır
-
 
 //gerekli modüller ve servisler Angular'ın import ifadeleri ile içe akarılıyor
 
@@ -15,16 +13,10 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { RegisterRequest } from 'src/core/models/request/register-request.model';
 
+
 @Injectable({
   providedIn: 'root',
 })
-
-
-/*currentUser ve currentUserSubject adlı iki özellik tanımlanır. currentUser
-bir şekilde mevcut kullanıcı bilgisi için tanımlanmıştır.
-currentUserSubject ise mevcut kullanıcı bilgisini saklar. */
-
-
 export class AuthService {
   public currentUser: Observable<User | null>;
   private currentUserSubject: BehaviorSubject<User | null>;
@@ -116,6 +108,7 @@ logOut fonksiyonu, sessionStorage'deki tüm verileri temizler ve currentUserSubj
   async logOut() {
     sessionStorage.clear();
     this.currentUserSubject.next(null);
+    this.isLoggedIn=false;
   }
 
   public async register(request: RegisterRequest): Promise<ResponseStatus> {

@@ -4,10 +4,11 @@ export interface RegisterRequest {
   UserName: string;
   FirstName: string;
   LastName: string;
+  Age: number;
+  PhoneNumber: string;
   Age: number; //
   UserImage: string; // 
   PhoneNumber: string;
-
   gender: Gender; //
    
 
@@ -17,5 +18,6 @@ export interface RegisterRequest {
 export enum Gender {
   Male,
   Female,
+
 }
 
