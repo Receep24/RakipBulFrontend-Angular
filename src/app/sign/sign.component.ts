@@ -11,7 +11,11 @@ import { AuthService } from 'src/core/services/auth/auth.service';
   styleUrls: ['./sign.component.css'],
 })
 export class SignComponent {
+register() {
+throw new Error('Method not implemented.');
+}
   public loginRequest: LoginRequest = <LoginRequest>{};
+registerRequest: any;
 
   constructor(
     private readonly authService: AuthService,

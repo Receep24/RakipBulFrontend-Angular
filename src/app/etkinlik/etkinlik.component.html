@@ -3,6 +3,7 @@
 <div class="container">
     <h1 class="mb-4">Etkinlikler</h1>
     <div class="row">
+
         <div class="col-md-8" *ngFor="let event of eventsToShow">
             <div class="card mb-3 d-flex flex-row-reverse">
                 <div>
@@ -18,6 +19,7 @@
                         class="card-img-top" style="height: 250px;" alt="Etkinlik 1">
                 </div>
             </div>
+
         </div>
         <div class="col-md-4">
             <div class="card">
@@ -26,6 +28,7 @@
                     <form class="text-center">
                         <div class="form-group">
                             <label for="etkinlikTuru">Etkinlik Türü</label>
+
                             <select class="form-control" id="etkinlikTuru" [(ngModel)]="selectedSport" [ngModelOptions]="{standalone:true}"
                                 >
                                 <option style="background-color: #fff;" class="text-secondary" value="Tümü">Tümü
@@ -38,7 +41,7 @@
                                 </option>
                                 <option style="background-color: #fff;" class="text-secondary" value="Tenis">Tenis
                                 </option>
-                            </select>
+
                         </div>
                         <button type="submit" class="btn btn-primary mt-3" style="width: 100%;" (click)="filterEvents()">Filtrele</button>
                     </form>
@@ -47,4 +50,6 @@
         </div>
     </div>
 </div>
+
 <app-footer></app-footer>
+

@@ -7,7 +7,11 @@ import { TokenResponse } from '../../models/response/token-response.model';
 import { LoginRequest } from '../../models/request/login-request.model';
 import { RegisterRequest } from '../../models/request/register-request.model';
 import { User } from '../../models/user.model';
+
 import { Events } from 'src/core/models/events.model';
+
+import { BaseResponse } from 'src/core/models/response/base-response.model';
+
 
 @Injectable({
   providedIn: 'root',
@@ -69,6 +73,10 @@ export class ApiService {
       );
   }
 
+
+
+
+
   //getProfileInfo fonksiyonu, kullanıcının profil bilgilerini almak için bir istek gönderir.
   //HttpClient.get fonksiyonunu kullanarak API'ye istek gönderir
 
@@ -87,7 +95,4 @@ export class ApiService {
       ("get", environment.api_url + "/" + entityType.name + "/GetAll").pipe(share());
   }
 
-  
-
-  
 }

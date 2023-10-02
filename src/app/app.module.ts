@@ -17,7 +17,11 @@ import { EtkinlikComponent } from './etkinlik/etkinlik.component';
 import { ProfileComponent } from './profile/profile.component';
 import {  HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
 import { AdminModule } from './admin/admin.module';
+
+import { CommentComponent } from './comment/comment.component';
+
 
 
 
@@ -35,7 +39,9 @@ import { AdminModule } from './admin/admin.module';
     IlanlarComponent,
     GirisComponent,
     EtkinlikComponent,
+
     ProfileComponent
+
   ],
   imports: [
     BrowserModule,

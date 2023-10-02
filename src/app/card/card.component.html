@@ -1,39 +1,11 @@
 <div class="anasayfa-content">
   <div class="container">
-    <div class="row justify-content-between">
-      <div class="col-md-3">
+    <div class="row justify-content-between" >
+      <div class="col-md-3" *ngFor="let sports of sportses">
         <div class="card mb-5 mt-5">
-          <img src="https://images.pexels.com/photos/16431234/pexels-photo-16431234/free-photo-of-moda-kadin-bacaklar-spor.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Resim 1" class="card-img-top">
+          <img src="{{sports.sportImage}}" alt="SportImage" class="card-img-top">
           <div class="card-body">
-            <h5 class="card-title text-center">TENİS</h5>
-            <div class="buton"><a href="/ilanlar" style="display: block; width: 100%;" class="btn btn-primary">RAKİP BUL</a></div>
-          </div>
-        </div>
-      </div>
-      <!-- bu resim düzeltilecek -->
-      <div class="col-md-3">
-        <div class="card mb-5 mt-5">
-          <img  src="https://images.pexels.com/photos/9519535/pexels-photo-9519535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Resim 2" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title text-center">FUTBOL</h5>
-            <div class="buton"><a href="/ilanlar" style="display: block; width: 100%;" class="btn btn-primary">RAKİP BUL</a></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card mb-5 mt-5">
-          <img src="https://images.pexels.com/photos/9376460/pexels-photo-9376460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Resim 3" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title text-center">BASKETBOL</h5>
-            <div class="buton"><a href="/ilanlar" style="display: block; width: 100%;" class="btn btn-primary">RAKİP BUL</a></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card mb-5 mt-5">
-          <img src="https://images.pexels.com/photos/6203581/pexels-photo-6203581.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Resim 4" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title text-center">VOLEYBOL</h5>
+            <h5 class="card-title text-center">{{sports.sportName}}</h5>
             <div class="buton"><a href="/ilanlar" style="display: block; width: 100%;" class="btn btn-primary">RAKİP BUL</a></div>
           </div>
         </div>
