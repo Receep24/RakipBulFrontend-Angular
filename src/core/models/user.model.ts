@@ -1,11 +1,7 @@
-
 import { Entity } from "./entity.model";
 
 export interface User extends Entity<number> {
-
-export interface User {
   UserId: number;
-
   Email: string;
   UserName: string;
   FirstName: string;

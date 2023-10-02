@@ -28,7 +28,6 @@
                     <form class="text-center">
                         <div class="form-group">
                             <label for="etkinlikTuru">Etkinlik Türü</label>
-
                             <select class="form-control" id="etkinlikTuru" [(ngModel)]="selectedSport" [ngModelOptions]="{standalone:true}"
                                 >
                                 <option style="background-color: #fff;" class="text-secondary" value="Tümü">Tümü
@@ -41,7 +40,7 @@
                                 </option>
                                 <option style="background-color: #fff;" class="text-secondary" value="Tenis">Tenis
                                 </option>
-
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-primary mt-3" style="width: 100%;" (click)="filterEvents()">Filtrele</button>
                     </form>
@@ -52,4 +51,3 @@
 </div>
 
 <app-footer></app-footer>
-
