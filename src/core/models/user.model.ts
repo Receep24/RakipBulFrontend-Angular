@@ -1,4 +1,6 @@
-export interface User {
+import { Entity } from "./entity.model";
+
+export interface User extends Entity<number> {
   UserId: number;
   Email: string;
   UserName: string;
@@ -10,6 +12,7 @@ export interface User {
   Password: string;
   gender: Gender;
   userType: UserType;
+
 }
 
 export enum UserType {

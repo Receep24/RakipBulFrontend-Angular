@@ -7,7 +7,11 @@ import { TokenResponse } from '../../models/response/token-response.model';
 import { LoginRequest } from '../../models/request/login-request.model';
 import { RegisterRequest } from '../../models/request/register-request.model';
 import { User } from '../../models/user.model';
+
+import { Events } from 'src/core/models/events.model';
+
 import { BaseResponse } from 'src/core/models/response/base-response.model';
+
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +21,7 @@ export class ApiService {
 
   //constructor fonksiyonu, HttpClient nesnesini enjekte eder ve HTTP isteklerini yapmak için kullanır.
 
-  constructor(private readonly http: HttpClient) { }
+  constructor(private readonly http: HttpClient) {}
 
   //login fonksiyonu, kullanıcı giriş isteğini gerçekleştirir.
   // HttpClient.post fonksiyonunu kullanarak API'ye LoginRequest nesnesini ve isteği yapar.
