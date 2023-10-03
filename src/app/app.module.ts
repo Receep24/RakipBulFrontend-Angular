@@ -38,9 +38,6 @@ import { JwtInterceptor } from 'src/core/services/interceptor/jwt.interceptor';
 
     ProfileComponent,
     CommentComponent,
-    AdminComponent,
-
-    ProfileComponent,
 
   ],
   imports: [
