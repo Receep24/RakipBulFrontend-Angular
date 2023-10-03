@@ -18,11 +18,10 @@ export class CardComponent {
 
   }
   getCard() {
-    this.apiService.getAllEntities(Sports).subscribe((res)=>  {
-      this.sportses = res.data;
-      console.log(this.sportses);
-
-  });
+    this.apiService.getAllEntities(Sports).subscribe((response) => {
+      this.sportses = response.data;
+      console.log(this.sportses)
+    });
 
 }
 }

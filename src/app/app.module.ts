@@ -17,9 +17,7 @@ import { EtkinlikComponent } from './etkinlik/etkinlik.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
 import { AdminModule } from './admin/admin.module';
-
 import { CommentComponent } from './comment/comment.component';
 import { JwtInterceptor } from 'src/core/services/interceptor/jwt.interceptor';
 
@@ -37,7 +35,13 @@ import { JwtInterceptor } from 'src/core/services/interceptor/jwt.interceptor';
     IlanlarComponent,
     GirisComponent,
     EtkinlikComponent,
+
     ProfileComponent,
+    CommentComponent,
+    AdminComponent,
+
+    ProfileComponent,
+
   ],
   imports: [
     BrowserModule,
