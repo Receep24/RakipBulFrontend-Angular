@@ -15,15 +15,13 @@ import { IlanlarComponent } from './ilanlar/ilanlar.component';
 import { GirisComponent } from './giris/giris.component';
 import { EtkinlikComponent } from './etkinlik/etkinlik.component';
 import { ProfileComponent } from './profile/profile.component';
-import {  HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AdminModule } from './admin/admin.module';
 
 import { CommentComponent } from './comment/comment.component';
-
-
-
+import { JwtInterceptor } from 'src/core/services/interceptor/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -39,9 +37,7 @@ import { CommentComponent } from './comment/comment.component';
     IlanlarComponent,
     GirisComponent,
     EtkinlikComponent,
-
-    ProfileComponent
-
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,9 +45,11 @@ import { CommentComponent } from './comment/comment.component';
     RouterModule,
     HttpClientModule,
     FormsModule,
-    AdminModule
+    AdminModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
