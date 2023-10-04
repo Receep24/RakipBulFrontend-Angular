@@ -3,7 +3,7 @@ import { Sports } from './sports.model';
 import { Adress } from './adress.model';
 import { Entity } from './entity.model';
 
-export class Adverts extends Entity<number> {
+export class Advert extends Entity<number> {
   advertText: string = '';
   userID: number = 0;
   sportID: number = 0;
@@ -11,7 +11,7 @@ export class Adverts extends Entity<number> {
   sportName: string = '';
   adress: Adress[] = [];
   // swagger da [ varsa liste olarak karşılıyorsun , { tekil olarak karşılıyorsun  -- html tarafınıda düzenle
-  sport: Sports[]=[];
+  sport?: Sports;
   user: User[] = [];
 
 }

@@ -1,4 +1,4 @@
-import { Adverts } from './advert.model';
+import { Advert} from './advert.model';
 import { Comment } from './comment.model';
 import { Entity } from './entity.model';
 import { Events } from './events.model';
@@ -18,7 +18,7 @@ export class User extends Entity<number> {
   userType: UserType = 0;
   points?: Point[];
   comments?: Comment[];
-  adverts?: Adverts[];
+  adverts?: Advert[];
   offers?: Offer[];
   participatedEvents?: Events[];
 }
