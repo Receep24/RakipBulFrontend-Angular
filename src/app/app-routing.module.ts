@@ -11,7 +11,7 @@ import { AdminComponent } from './admin/admin.component';
 const routes: Routes = [
 
   { path: "", component:AnasayfaComponent},
-  { path: "ilanlar", component: IlanComponent},
+  { path: "ilan", component: IlanComponent},
   { path: "anasayfa", component: AnasayfaComponent},
   { path: "giris", component: GirisComponent},
   {path: "etkinlik",component: EtkinlikComponent},

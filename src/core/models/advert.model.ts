@@ -3,26 +3,20 @@ import { User } from "./user.model";
 import { Sports } from "./sports.model";
 import { Adress } from "./adress.model";
 
-export class Adverts {
-  id?:number;
-  advertText?:string;
-  userID?:number;
-  sportID?:number;
-  adressID?:number;
-
+export class Advert {
+  id:number =0;
+  advertText:string ='';
+  userID:number =0;
+  sportID:number =0;
+  adressID:number =0;
+  sportName:string = '';
   adress : Adress[] = [];
-  sport : Sports[] = [];
+  // swagger da [ varsa liste olarak karşılıyorsun , { tekil olarak karşılıyorsun  -- html tarafınıda düzenle
+  sport? : Sports;
   user : User[] = [];
 
 }
 
-import { Entity } from "./entity.model";
 
-export interface Advert extends Entity<number> {
-    advertText: string;
-    userID: number;
-    sportID: number;
-    adressID: number;   
-}
 
 
