@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginRequest } from 'src/core/models/request/login-request.model';
 import { ResponseStatus } from 'src/core/models/response/base-response.model';
-import { User } from 'src/core/models/user.model';
 import { AuthService } from 'src/core/services/auth/auth.service';
+import { ApiService } from 'src/core/services/api/api.service';
 
 @Component({
   selector: 'app-sign',
@@ -11,17 +11,18 @@ import { AuthService } from 'src/core/services/auth/auth.service';
   styleUrls: ['./sign.component.css'],
 })
 export class SignComponent {
-register() {
-throw new Error('Method not implemented.');
-}
+ 
+  register() {
+    throw new Error('Method not implemented.');
+  }
   public loginRequest: LoginRequest = <LoginRequest>{};
-registerRequest: any;
+  registerRequest: any;
 
   constructor(
     private readonly authService: AuthService,
+    private readonly apiService:ApiService,
     private readonly router: Router
   ) {}
-
   ngOnInit() {}
 
   async login() {
@@ -32,4 +33,6 @@ registerRequest: any;
     } else if (status == ResponseStatus.Invalid)
       this.loginRequest.Password = '';
   }
+
+ 
 }
