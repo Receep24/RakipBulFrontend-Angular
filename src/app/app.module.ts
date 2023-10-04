@@ -35,7 +35,6 @@ import { JwtInterceptor } from 'src/core/services/interceptor/jwt.interceptor';
     IlanlarComponent,
     GirisComponent,
     EtkinlikComponent,
-
     ProfileComponent,
     CommentComponent,
 

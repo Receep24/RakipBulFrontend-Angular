@@ -8,9 +8,5 @@ export class Districts {
   cities : Cities [] = [];
 }
 
-export interface Districts {
-    DistrictId: number;
-    DistrictName: string;
-    CityId: number; 
-}
+
 

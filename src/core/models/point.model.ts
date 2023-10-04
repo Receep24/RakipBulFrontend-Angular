@@ -1,8 +1,8 @@
 import { Entity } from "./entity.model";
 
-export interface Point extends Entity<number> {
-    Points: number;
-    UserID: number;
-    EventID: number;
+export class Point extends Entity<number> {
+    points?: number;
+    userID?: number;
+    eventID?: number;
  
 }

@@ -13,15 +13,14 @@ import { AuthService } from '../auth/auth.service';
 export class JwtInterceptor implements HttpInterceptor {
   constructor(private authService: AuthService) {}
 
-  // Bu interceptor, HTTP isteklerini izler ve JWT tabanlı kimlik doğrulama başlığı ekler veya yeniler.
-
-  // HTTP isteklerini ele alır
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     // Eğer istek, API URL'si ile başlıyorsa ve "RefreshToken" ifadesini içermiyorsa devam eder
     if (request.url.startsWith(environment.api_url) && !request.url.includes('RefreshToken')) {
+    55
+
       // Saklanan JWT'nin geçerliliğini kontrol eder
       const expiration = Date.parse(JSON.parse(<string>sessionStorage.getItem('token_expiration')));
 
@@ -35,7 +34,6 @@ export class JwtInterceptor implements HttpInterceptor {
           }
         });
       }
-
       // İstek üzerine kimlik doğrulama başlığını ekler
       request = this.setRequest(request);
     }

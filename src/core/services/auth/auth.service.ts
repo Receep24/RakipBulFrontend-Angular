@@ -125,6 +125,5 @@ logOut fonksiyonu, sessionStorage'deki tüm verileri temizler ve currentUserSubj
     }
   
     return status;
-  }
-  
+  } 
 }

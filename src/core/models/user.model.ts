@@ -1,18 +1,26 @@
-import { Entity } from "./entity.model";
+import { Adverts } from './advert.model';
+import { Comment } from './comment.model';
+import { Entity } from './entity.model';
+import { Events } from './events.model';
+import { Offer } from './offer.model';
+import { Point } from './point.model';
 
 export class User extends Entity<number> {
-  UserId?: number;
-  Email?: string;
-  UserName?: string;
-  FirstName?: string;
-  LastName?: string;
-  Age?: number;
-  UserImage?: string;
-  PhoneNumber?: string;
-  Password?: string;
-  gender?: Gender;
-  userType?: UserType;
-
+  email: string = '';
+  userName: string = '';
+  firstName: string = '';
+  lastName: string = '';
+  age: number = 0;
+  userImage: string = '';
+  phoneNumber: string = '';
+  password: string = '';
+  gender: Gender = 0;
+  userType: UserType = 0;
+  points?: Point[];
+  comments?: Comment[];
+  adverts?: Adverts[];
+  offers?: Offer[];
+  participatedEvents?: Events[];
 }
 
 export enum UserType {

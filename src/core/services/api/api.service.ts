@@ -73,10 +73,6 @@ export class ApiService {
       );
   }
 
-
-
-
-
   //getProfileInfo fonksiyonu, kullanıcının profil bilgilerini almak için bir istek gönderir.
   //HttpClient.get fonksiyonunu kullanarak API'ye istek gönderir
 
@@ -94,5 +90,6 @@ export class ApiService {
     return this.http.request<BaseDataResponse<TEntity[]>>
       ("get", environment.api_url + "/" + entityType.name + "/GetAll").pipe(share());
   }
+
 
 }

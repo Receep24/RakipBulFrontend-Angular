@@ -4,8 +4,5 @@ id?:number;
 cityName?:string;
 }
 
-export interface Cities {
-    CityId: number;
-    CityName: string;
-}
+
 

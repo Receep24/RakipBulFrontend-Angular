@@ -1,4 +1,4 @@
-export interface UserEvents {
-    UserID: number;
-    EventID: number;
+export class UserEvents {
+    userID?: number;
+    eventID?: number;
 }

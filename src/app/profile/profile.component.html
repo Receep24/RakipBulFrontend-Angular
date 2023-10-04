@@ -1,18 +1,16 @@
 <app-navbar></app-navbar>
 
-<section style="background-color: #ffffff;">
-  <div class="projcard projcard-blue">
+<section style="background-color: #ffffff;" >
+  <div class="projcard projcard-blue" *ngIf="user">
     <div class="projcard-innerbox">
       <div class="container py-5">
-        <div class="row profile">
+        <div class="row profile" >
           <div class="col-lg-4">
             <div class="card mb-4">
               <div class="card-body text-center">
-                <img src="" alt="UserImage(Veritabanı)"
-                  class="rounded-circle img-fluid" style="width: 150px;">
-                <h5 class="my-3">UserName(Veritabanı)</h5>
-                <p class="text-muted mb-1">Full Stack Developer</p>
-                <p class="text-muted mb-4">Bay Area</p>
+                <img src="{{user.userImage}}" alt="" class="img-fluid" style="width: 200px;" >
+                <h5 class="my-3">{{user.userName}}</h5>               
+                <p class="text-muted mb-4"></p>
 
               </div>
             </div>
@@ -22,19 +20,19 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col-sm-3">
-                    <p class="mb-0">Full Name</p>
+                    <p class="mb-0">Ad Soyad</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-0">FirstName + LastName (Veritabanı)</p>
+                    <p class="text-muted mb-0">{{user.firstName}} {{user.lastName}}</p>
                   </div>
                 </div>
                 <hr>
                 <div class="row">
                   <div class="col-sm-3">
-                    <p class="mb-0">Email(Veritabanı)</p>
+                    <p class="mb-0">Email</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-0">example@example.com(Veritabanı)</p>
+                    <p class="text-muted mb-0">{{user.email}}</p>
                   </div>
                 </div>
                 <hr>
@@ -43,25 +41,16 @@
                     <p class="mb-0">Phone</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-0">(097) 234-5678</p>
+                    <p class="text-muted mb-0">{{user.phoneNumber}}</p>
                   </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="mb-0">PhoneNumber(Veritabanı)</p>
-                  </div>
-                  <div class="col-sm-9">
-                    <p class="text-muted mb-0">(098) 765-4321(Veritabanı)</p>
-                  </div>
-                </div>
+                </div>                 
                 <hr>
                 <div class="row">
                   <div class="col-sm-3">
                     <p class="mb-0">Address</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-0">Bay Area</p>
+                    <p class="text-muted mb-0"></p>
                   </div>
                 </div>
               </div>
