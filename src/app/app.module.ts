@@ -17,9 +17,10 @@ import { EtkinlikComponent } from './etkinlik/etkinlik.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { AdminModule } from './admin/admin.module';
+
 import { CommentComponent } from './comment/comment.component';
 import { JwtInterceptor } from 'src/core/services/interceptor/jwt.interceptor';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import { JwtInterceptor } from 'src/core/services/interceptor/jwt.interceptor';
     RouterModule,
     HttpClientModule,
     FormsModule,
-    AdminModule,
+    AdminModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
