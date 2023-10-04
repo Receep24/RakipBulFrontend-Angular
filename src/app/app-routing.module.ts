@@ -7,6 +7,8 @@ import { EtkinlikComponent } from './etkinlik/etkinlik.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CommentComponent } from './comment/comment.component';
 import { AdminComponent } from './admin/admin.component';
+import { AuthGuard } from './auth-guard';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
 
@@ -17,7 +19,9 @@ const routes: Routes = [
   {path: "etkinlik",component: EtkinlikComponent},
   {path:"profildetail",component:ProfileComponent},
   {path:"comment",component:CommentComponent},
-  {path:"admin",component:AdminComponent},
+  {path:"admin",component:AdminComponent,canActivate:[AuthGuard]},
+  { path: 'not-found', component: NotfoundComponent },
+  { path: '**', redirectTo: '/not-found' }
 
 
 ];
