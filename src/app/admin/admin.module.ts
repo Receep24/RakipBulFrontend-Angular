@@ -3,6 +3,11 @@ import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
+import { HeaderComponent } from './header/header.component';
+import { AdminIlanComponent } from './admin-ilan/admin-ilan.component';
+import { AdminEtkinlikComponent } from './admin-etkinlik/admin-etkinlik.component';
+import { AdminYorumComponent } from './admin-yorum/admin-yorum.component';
+
 
 
 
@@ -10,10 +15,15 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
   declarations: [
     AdminComponent,
     SidebarComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    HeaderComponent,
+    AdminIlanComponent,
+    AdminEtkinlikComponent,
+    AdminYorumComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+
   ]
 })
 export class AdminModule { }

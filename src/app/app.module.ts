@@ -41,6 +41,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     CommentComponent,
     NotfoundComponent,
 
+
+
   ],
   imports: [
     BrowserModule,
