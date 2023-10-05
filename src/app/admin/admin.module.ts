@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { AdminIlanComponent } from './admin-ilan/admin-ilan.component';
 import { AdminEtkinlikComponent } from './admin-etkinlik/admin-etkinlik.component';
 import { AdminYorumComponent } from './admin-yorum/admin-yorum.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 
 
@@ -19,7 +20,8 @@ import { AdminYorumComponent } from './admin-yorum/admin-yorum.component';
     HeaderComponent,
     AdminIlanComponent,
     AdminEtkinlikComponent,
-    AdminYorumComponent
+    AdminYorumComponent,
+    AdminUsersComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,16 @@
+.container {
+    margin-left: 300px;
+    margin-top: 50px;
+  }
+  
+  th {
+    background-color: black; /* Arka plan rengini değiştirin */
+    color: white;
+    font-weight: bold;
+  }
+
+  .button-group {
+    display: flex;
+    gap: 5px; /* Butonlar arasındaki boşluk */
+  }
+  

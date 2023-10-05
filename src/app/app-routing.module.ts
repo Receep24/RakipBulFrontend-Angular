@@ -16,6 +16,7 @@ import { AdminEtkinlikComponent } from './admin/admin-etkinlik/admin-etkinlik.co
 
 import { AuthGuard } from './auth-guard';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { AdminUsersComponent } from './admin/admin-users/admin-users.component';
 
 
 const routes: Routes = [
@@ -33,9 +34,9 @@ const routes: Routes = [
   {path:"admin/sidebar",component:SidebarComponent},
   {path:"admin/admin-ilan",component:AdminIlanComponent},
   {path:"admin/admin-etkinlik",component:AdminEtkinlikComponent},
-=======
   {path:"admin",component:AdminComponent,canActivate:[AuthGuard]},
   { path: 'not-found', component: NotfoundComponent },
+  { path: 'admin/admin-users', component: AdminUsersComponent },
   { path: '**', redirectTo: '/not-found' }
 
 
