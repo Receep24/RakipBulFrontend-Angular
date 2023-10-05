@@ -125,5 +125,10 @@ logOut fonksiyonu, sessionStorage'deki tüm verileri temizler ve currentUserSubj
     }
   
     return status;
-  } 
+  }
+  
+  public getUserType(): User["userType"] | null {
+    const currentUser = this.currentUserSubject.value;
+    return currentUser?.userType ?? null;
+  }
 }

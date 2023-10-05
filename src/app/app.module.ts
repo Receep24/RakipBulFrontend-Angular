@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { CommentComponent } from './comment/comment.component';
 import { JwtInterceptor } from 'src/core/services/interceptor/jwt.interceptor';
 import { AdminModule } from './admin/admin.module';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { AdminModule } from './admin/admin.module';
     EtkinlikComponent,
     ProfileComponent,
     CommentComponent,
+    NotfoundComponent,
 
 
 
