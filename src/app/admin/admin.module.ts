@@ -6,6 +6,7 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 import { HeaderComponent } from './header/header.component';
 import { AdminIlanComponent } from './admin-ilan/admin-ilan.component';
 import { AdminEtkinlikComponent } from './admin-etkinlik/admin-etkinlik.component';
+import { AdminYorumComponent } from './admin-yorum/admin-yorum.component';
 
 
 
@@ -17,7 +18,8 @@ import { AdminEtkinlikComponent } from './admin-etkinlik/admin-etkinlik.componen
     SearchbarComponent,
     HeaderComponent,
     AdminIlanComponent,
-    AdminEtkinlikComponent
+    AdminEtkinlikComponent,
+    AdminYorumComponent
   ],
   imports: [
     CommonModule,

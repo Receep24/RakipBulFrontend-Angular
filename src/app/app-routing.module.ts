@@ -11,6 +11,7 @@ import { HeaderComponent } from './admin/header/header.component';
 import { SearchbarComponent } from './admin/searchbar/searchbar.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { AdminIlanComponent } from './admin/admin-ilan/admin-ilan.component';
+import { AdminEtkinlikComponent } from './admin/admin-etkinlik/admin-etkinlik.component';
 
 const routes: Routes = [
 
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path:"admin/searchbar",component:SearchbarComponent},
   {path:"admin/sidebar",component:SidebarComponent},
   {path:"admin/admin-ilan",component:AdminIlanComponent},
+  {path:"admin/admin-etkinlik",component:AdminEtkinlikComponent},
 
 
 ];
