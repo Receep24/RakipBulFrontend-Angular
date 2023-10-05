@@ -39,6 +39,8 @@ import { AdminModule } from './admin/admin.module';
     ProfileComponent,
     CommentComponent,
 
+
+
   ],
   imports: [
     BrowserModule,

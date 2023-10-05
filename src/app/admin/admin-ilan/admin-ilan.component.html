@@ -1,0 +1,37 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+
+<main id="main" class="main">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Adres Metni</th>
+            <th>Kullanıcı</th>
+            <th>Spor</th>
+            <th>Sil / Güncelle</th>
+            <!-- Diğer sütun başlıkları -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let advert of adverts">
+            <td>{{ advert.advertText }}</td>
+            <td>{{ advert.userID }}</td>
+            <td>{{ advert.sport!.sportName }}</td>
+            <td><a href="#" class="btn btn-danger">SİL</a><a href="#" class="btn btn-warning">GÜNCELLE</a></td>
+            <!-- Diğer sütunlar için verileri ekle -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</main>
+
+
+
+
+
+

@@ -11,12 +11,16 @@ import { User } from '../../models/user.model';
 import { Events } from 'src/core/models/events.model';
 
 import { BaseResponse } from 'src/core/models/response/base-response.model';
+import { Advert } from 'src/core/models/advert.model';
 
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
+  deleteEntity(id: number, Advert: Advert) {
+    throw new Error('Method not implemented.');
+  }
   private endpoint = environment.api_url;
 
   //constructor fonksiyonu, HttpClient nesnesini enjekte eder ve HTTP isteklerini yapmak için kullanır.
