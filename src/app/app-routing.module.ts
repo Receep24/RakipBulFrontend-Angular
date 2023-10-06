@@ -14,7 +14,11 @@ import { AdminIlanComponent } from './admin/admin-ilan/admin-ilan.component';
 import { AdminEtkinlikComponent } from './admin/admin-etkinlik/admin-etkinlik.component';
 import { AuthGuard } from './auth-guard';
 import { NotfoundComponent } from './notfound/notfound.component';
+
 import { AdminYorumComponent } from './admin/admin-yorum/admin-yorum.component';
+
+import { AdminUsersComponent } from './admin/admin-users/admin-users.component';
+
 
 
 const routes: Routes = [
@@ -31,9 +35,13 @@ const routes: Routes = [
   {path:"admin/sidebar",component:SidebarComponent},
   {path:"admin/admin-ilan",component:AdminIlanComponent},
   {path:"admin/admin-etkinlik",component:AdminEtkinlikComponent},
+
   {path:"admin/admin-yorum",component:AdminYorumComponent},
+
+
   {path:"admin",component:AdminComponent,canActivate:[AuthGuard]},
   { path: 'not-found', component: NotfoundComponent },
+  { path: 'admin/admin-users', component: AdminUsersComponent },
   { path: '**', redirectTo: '/not-found' }
 
 ];

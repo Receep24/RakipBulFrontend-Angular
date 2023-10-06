@@ -12,6 +12,7 @@ import { User } from '../../models/user.model';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { RegisterRequest } from 'src/core/models/request/register-request.model';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -131,4 +132,12 @@ logOut fonksiyonu, sessionStorage'deki tüm verileri temizler ve currentUserSubj
     const currentUser = this.currentUserSubject.value;
     return currentUser?.userType ?? null;
   }
+
+
+  // Tüm kullanıcıları getirme işlemi
+  // private url : string = environment.api_url
+
+  // public getAllUsers(): Observable<User> {
+  //   return this.http.get<User> (this.url + '/User/GetAll')
+  // }
 }
