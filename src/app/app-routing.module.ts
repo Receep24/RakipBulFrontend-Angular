@@ -7,15 +7,14 @@ import { EtkinlikComponent } from './etkinlik/etkinlik.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CommentComponent } from './comment/comment.component';
 import { AdminComponent } from './admin/admin.component';
-
 import { HeaderComponent } from './admin/header/header.component';
 import { SearchbarComponent } from './admin/searchbar/searchbar.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { AdminIlanComponent } from './admin/admin-ilan/admin-ilan.component';
 import { AdminEtkinlikComponent } from './admin/admin-etkinlik/admin-etkinlik.component';
-
 import { AuthGuard } from './auth-guard';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { AdminYorumComponent } from './admin/admin-yorum/admin-yorum.component';
 
 
 const routes: Routes = [
@@ -26,18 +25,16 @@ const routes: Routes = [
   {path: "etkinlik",component: EtkinlikComponent},
   {path:"profildetail",component:ProfileComponent},
   {path:"comment",component:CommentComponent},
-
   {path:"admin",component:AdminComponent},
   {path:"admin/header",component:HeaderComponent},
   {path:"admin/searchbar",component:SearchbarComponent},
   {path:"admin/sidebar",component:SidebarComponent},
   {path:"admin/admin-ilan",component:AdminIlanComponent},
   {path:"admin/admin-etkinlik",component:AdminEtkinlikComponent},
-=======
+  {path:"admin/admin-yorum",component:AdminYorumComponent},
   {path:"admin",component:AdminComponent,canActivate:[AuthGuard]},
   { path: 'not-found', component: NotfoundComponent },
   { path: '**', redirectTo: '/not-found' }
-
 
 ];
 
