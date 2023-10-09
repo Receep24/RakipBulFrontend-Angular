@@ -27,7 +27,7 @@ export class SignComponent {
     let status = await this.authService.login(this.loginRequest);
 
     if (status == ResponseStatus.Ok) {
-      await this.router.navigate(['/anasayfa']);
+      await this.router.navigate(['/admin']);
     } else if (status == ResponseStatus.Invalid)
       this.loginRequest.Password = '';
   }

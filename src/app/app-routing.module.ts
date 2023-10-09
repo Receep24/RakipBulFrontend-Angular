@@ -67,14 +67,14 @@ const routes: Routes = [
       },
     ],
   },
-  {
-    path: 'user',
-    component: UserComponent,
-    canActivate: [AuthGuard],
-    children: [{
+  // {
+  //   path: 'user',
+  //   component: UserComponent,
+  //   canActivate: [AuthGuard],
+  //   children: [{
 
-    }],
-  },
+  //   }],
+  // },
 
   { path: 'not-found', component: NotfoundComponent },
   { path: '**', redirectTo: '/not-found' },
