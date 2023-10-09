@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminModule } from './admin/admin.module';
+import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from '../app-routing.module';
-import { UserModule } from './user/user.module';
+
+
 
 @NgModule({
   declarations: [
- 
+    HeaderComponent
   ],
   imports: [
     CommonModule,
-    UserModule,
     AppRoutingModule
   ],
-  exports:[
+  exports: [
+    HeaderComponent
   ]
 })
-export class DashboardModule { }
+export class LayoutsModule { }

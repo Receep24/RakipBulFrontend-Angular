@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SidebarComponent } from './sidebar.component';
+import { PopupComponent } from './popup.component';
 
-describe('SidebarComponent', () => {
-  let component: SidebarComponent;
-  let fixture: ComponentFixture<SidebarComponent>;
+describe('PopupComponent', () => {
+  let component: PopupComponent;
+  let fixture: ComponentFixture<PopupComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SidebarComponent]
+      declarations: [PopupComponent]
     });
-    fixture = TestBed.createComponent(SidebarComponent);
+    fixture = TestBed.createComponent(PopupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

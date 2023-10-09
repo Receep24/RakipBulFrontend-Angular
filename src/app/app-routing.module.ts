@@ -33,6 +33,37 @@ const routes: Routes = [
 
 // loadChildren: Bu özellik, ilgili rotaya erişildiğinde yüklenmesi gereken modülü belirtir. Dinamik olarak modül yüklemesi yapar ve modül yüklendikten sonra ilgili alt bileşenler görüntülenir. Bu, uygulamanın başlangıcında tüm modülleri yüklemek yerine sadece ihtiyaç duyulduğunda yüklemeyi sağlar, bu da uygulamanın performansını artırabilir.
   {
+
+    /*
+    
+const routes: Routes = [
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'all',
+    loadChildren: () =>
+      import('./all/all.module').then((m) => m.AllModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'student',
+    loadChildren: () =>
+      import('./student/student.module').then((m) => m.StudentModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'teacher',
+    loadChildren: () =>
+      import('./teacher/teacher.module').then((m) => m.TeacherModule),
+    canActivate: [AuthGuard]
+  }
+  */
+
+  
     path: 'admin',
     component: AdminComponent,
     canActivate: [AuthGuard],

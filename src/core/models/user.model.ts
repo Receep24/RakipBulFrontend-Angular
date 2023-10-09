@@ -14,8 +14,8 @@ export class User extends Entity<number> {
   userImage: string = '';
   phoneNumber: string = '';
   password: string = '';
-  gender: Gender = 0;
-  userType: UserType = 0;
+  gender?: Gender ;
+  userType?: UserType ;
   points?: Point[];
   comments?: Comment[];
   adverts?: Advert[];

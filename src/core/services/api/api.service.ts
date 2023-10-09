@@ -8,19 +8,14 @@ import { LoginRequest } from '../../models/request/login-request.model';
 import { RegisterRequest } from '../../models/request/register-request.model';
 import { User } from '../../models/user.model';
 
-import { Events } from 'src/core/models/events.model';
 
-import { BaseResponse } from 'src/core/models/response/base-response.model';
-import { Advert } from 'src/core/models/advert.model';
 
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  deleteEntity(id: number, Advert: Advert) {
-    throw new Error('Method not implemented.');
-  }
+ 
   private endpoint = environment.api_url;
 
   //constructor fonksiyonu, HttpClient nesnesini enjekte eder ve HTTP isteklerini yapmak için kullanır.
@@ -93,6 +88,31 @@ export class ApiService {
   getAllEntities<TEntity>(entityType: Type<TEntity>) {
     return this.http.request<BaseDataResponse<TEntity[]>>
       ("get", environment.api_url + "/" + entityType.name + "/GetAll").pipe(share());
+  }
+
+   //Ekleme kodları
+   createEntity<TEntity>(entity: TEntity, entityType: string) {
+    return this.http.post<BaseDataResponse<TEntity[]>>(environment.api_url + "/" + entityType + "/Create", entity).pipe(share()).toPromise();
+  }
+
+  //Silme kodları
+  deleteEntity<TEntity>(id: number, entityType: Type<TEntity>) {
+    return this.http.delete<BaseDataResponse<TEntity[]>>(environment.api_url + "/" + entityType.name + "/Delete?id=" + id).pipe(share()).toPromise();
+  }
+
+  //GetById kodları
+  getEntityById<TEntity>(id: number, entityType: Type<TEntity>) {
+    return this.http.get<BaseDataResponse<TEntity>>(`${environment.api_url}/${entityType.name}/GetById?id=${id}`).pipe(share()).toPromise();
+  }
+
+  //Get by Id kodları
+  // getEntityById<TEntity>(id: number, entityType: Type<TEntity>) {
+  //   return this.http.get<BaseDataResponse<TEntity[]>>(environment.api_url + "/" + entityType.name + "/GetById?id=" + id).pipe(share()).toPromise();
+  // }
+
+  //Güncelleme kodları
+  updateEntity<TEntity>(id: number, entity: TEntity, entityType: Type<TEntity>) {
+    return this.http.put<BaseDataResponse<TEntity>>(environment.api_url + "/" + entityType.name + "/Update?id=" + id, entity).pipe(share()).toPromise();
   }
 
 

@@ -7,6 +7,3 @@ export class Districts {
 
   cities : Cities [] = [];
 }
-
-
-

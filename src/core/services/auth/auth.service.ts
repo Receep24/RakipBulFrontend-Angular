@@ -46,11 +46,10 @@ export class AuthService {
     const loginResponse = await this.apiService.login(request).toPromise();
 
     let status = loginResponse!.status;
+    
 
 
-    if (status == ResponseStatus.Ok) {
-
-      this.router.navigate(['/anasayfa']);
+    if (status == ResponseStatus.Ok) {      
 
       this.setToken(loginResponse!.data);
       //Giriş yanıtı başarılı ise, oturum açma token'ını setToken fonksiyonuyla

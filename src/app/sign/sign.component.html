@@ -3,14 +3,15 @@
 </video>
 
 
-<div style="position: absolute; width: 100%; top: 20%; left: 50%; transform: translate(-50%, -50%); opacity: 0.6;" class="maindiv d-flex justify-content-center">
-<!-- <img src="https://cdn.pixabay.com/photo/2020/03/10/16/47/moon-4919501_640.jpg" alt="" class="mt-2" style="width: 50%; height: 600px;"> -->
+<div style="position: absolute; width: 100%; top: 20%; left: 50%; transform: translate(-50%, -50%); opacity: 0.6;"
+  class="maindiv d-flex justify-content-center">
+  <!-- <img src="https://cdn.pixabay.com/photo/2020/03/10/16/47/moon-4919501_640.jpg" alt="" class="mt-2" style="width: 50%; height: 600px;"> -->
 
   <div class="container mt-2">
 
     <div class="card p-3 opacity-100 ">
-        <ul class="nav nav-tabs col-12  mb-3 " id="myTabs" role="tablist">
-          <li class="nav-item col-6" role="presentation">
+      <ul class="nav nav-tabs col-12  mb-3 " id="myTabs" role="tablist">
+        <li class="nav-item col-6" role="presentation">
           <a class="nav-link active" id="signIn-tab" data-bs-toggle="tab" href="#signIn" role="tab"
             aria-controls="signIn" aria-selected="true">Sign In</a>
         </li>
@@ -23,32 +24,38 @@
         <div class="tab-pane fade show active" id="signIn" role="tabpanel" aria-labelledby="signIn-tab">
           <!-- Sign In Form  -->
           <form>
-              <div class="mb-3 login">
-               <div class="usernamediv mb-3 w-100">
+            <div class="mb-3 login">
+              <div class="usernamediv mb-3 w-100">
                 <label for="username" class="form-label text-secondary fs-6">Username</label>
-                <input [(ngModel)]="loginRequest.UserName" [ngModelOptions]="{standalone: true}" name="UserName" type="text" class="fform-control border border-secondary-subtle w-75" placeholder="Email">
-               </div>
-                <div class="passworddiv mb-3 w-100">
-                  <label for="password" class="form-label text-secondary fs-6">Password</label>
-                  <input [(ngModel)]="loginRequest.Password" [ngModelOptions]="{standalone: true}" name="Password" type="password" class="fform-control border border-secondary-subtle w-75" placeholder="Password">
-                </div>
+                <input [(ngModel)]="loginRequest.UserName" [ngModelOptions]="{standalone: true}" name="UserName"
+                  type="text" class="fform-control border border-secondary-subtle w-75" placeholder="Email">
               </div>
+              <div class="passworddiv mb-3 w-100">
+                <label for="password" class="form-label text-secondary fs-6">Password</label>
+                <input [(ngModel)]="loginRequest.Password" [ngModelOptions]="{standalone: true}" name="Password"
+                  type="password" class="fform-control border border-secondary-subtle w-75" placeholder="Password">
+              </div>
+            </div>
             <div class="mb-3 container d-flex justify-content-center">
-              <button (click)="login()" type="button" class="btn btn-primary align-items-center" style="width: 400px;">Giriş yap</button>
+              <button (click)="login()" type="button" class="btn btn-primary align-items-center"
+                style="width: 400px;">Giriş yap</button>
             </div>
             <div class="mb-3 container d-flex justify-content-center">
               <label for="or" class="form-label text-secondary fs-6">veya</label>
             </div>
             <div class="mb-3 container d-flex justify-content-center">
-              <button id="googleBtn" type="button" class="btn align-items-center" style="width: 400px; background-color: #98eb12; color: #ffff;">
-              <i class="fab fa-google"></i> Google</button>
+              <button id="googleBtn" type="button" class="btn align-items-center"
+                style="width: 400px; background-color: #98eb12; color: #ffff;">
+                <i class="fab fa-google"></i> Google</button>
             </div>
             <div class="mb-3 container d-flex justify-content-center">
-              <button id="facebookBtn" type="button" class="btn align-items-center" style="width: 400px; background-color: #4464A6; color: #ffff;">
+              <button id="facebookBtn" type="button" class="btn align-items-center"
+                style="width: 400px; background-color: #4464A6; color: #ffff;">
                 <i class="fab fa-facebook-f"></i> Facebook</button>
             </div>
             <div class="mb-3 container d-flex justify-content-center">
-              <button id="twitterBtn" type="button" class="btn align-items-center" style="width: 400px; background-color: #0098C2; color: #ffff;">
+              <button id="twitterBtn" type="button" class="btn align-items-center"
+                style="width: 400px; background-color: #0098C2; color: #ffff;">
                 <i class="fab fa-twitter"></i> Twitter</button>
             </div>
             <div class="mb-3 container d-flex justify-content-center">
@@ -58,90 +65,100 @@
           </form>
         </div>
         <div class="tab-pane fade" id="signUp" role="tabpanel" aria-labelledby="signUp-tab">
-           <!-- Sign Up Form  -->
+          <!-- Sign Up Form  -->
           <form>
             <div class="mb-3 row">
               <div class="mb-3 col">
                 <label for="firstname" class="form-label text-secondary fs-6">First Name</label>
-                <input [(ngModel)]="registerRequest.FirstName" [ngModelOptions]="{standalone: true}" type="text" class="form-control border border-secondary-subtle" id="firstname">
+                <input [(ngModel)]="registerRequest.FirstName" [ngModelOptions]="{standalone: true}" type="text"
+                  class="form-control border border-secondary-subtle" id="firstname">
 
               </div>
 
               <div class="mb-3 col">
                 <label for="lastname" class="form-label text-secondary fs-6">Last Name</label>
-                <input [(ngModel)]="registerRequest.LastName" [ngModelOptions]="{standalone: true}" type="text" class="form-control border border-secondary-subtle" id="lastname">
+                <input [(ngModel)]="registerRequest.LastName" [ngModelOptions]="{standalone: true}" type="text"
+                  class="form-control border border-secondary-subtle" id="lastname">
               </div>
 
               <div class="mb-3 col">
                 <label for="phonenumber" class="form-label text-secondary fs-6">Phone Number</label>
-                <input [(ngModel)]="registerRequest.PhoneNumber" [ngModelOptions]="{standalone: true}" type="text" class="form-control border border-secondary-subtle" id="phonenumber">
+                <input [(ngModel)]="registerRequest.PhoneNumber" [ngModelOptions]="{standalone: true}" type="text"
+                  class="form-control border border-secondary-subtle" id="phonenumber">
               </div>
             </div>
 
             <div class="mb-3 row">
-            <div class="mb-3 col">
-              <label for="birthdate" class="form-label text-secondary fs-6">Birthdate</label>
-              <input  type="date" class="form-control border border-secondary-subtle " id="birthdate">
-            </div>
+              <div class="mb-3 col">
+                <label for="birthdate" class="form-label text-secondary fs-6">Birthdate</label>
+                <input [(ngModel)]="registerRequest.Age" [ngModelOptions]="{ standalone: true }" type="date"
+                  class="form-control border border-secondary-subtle" id="birthdate">
 
-            <div class="mb-3 col">
-              <label for="gender" class="form-label text-secondary fs-6">Gender</label>
-              <select class="form-select border border-secondary-subtle" id="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>                
-              </select>
+              </div>
+
+              <div class="mb-3 col">
+                <div class="mb-3 col">
+                  <label for="gender" class="form-label text-secondary fs-6">Gender</label>
+                  <select [(ngModel)]="registerRequest.Gender" [ngModelOptions]="{ standalone: true }"
+                    class="form-select border border-secondary-subtle" id="gender">
+                    <option [ngValue]="'Male'">Male</option>
+                    <option [ngValue]="'Female'">Female</option>
+                  </select>
+                </div>
+              </div>
             </div>
-          </div>
             <div class="mb-3 row">
-            <div class="mb-3 col">
-              <label for="username" class="form-label text-secondary fs-6">Username</label>
-              <input [(ngModel)]="registerRequest.UserName" [ngModelOptions]="{standalone: true}" type="text" class="form-control border border-secondary-subtle" id="username">
-            </div>
+              <div class="mb-3 col">
+                <label for="username" class="form-label text-secondary fs-6">Username</label>
+                <input [(ngModel)]="registerRequest.UserName" [ngModelOptions]="{standalone: true}" type="text"
+                  class="form-control border border-secondary-subtle" id="username">
+              </div>
 
-            <div class="mb-3 col">
-              <label for="email" class="form-label text-secondary fs-6">Email</label>
-              <input [(ngModel)]="registerRequest.Email" [ngModelOptions]="{standalone: true}" type="email" class="form-control border border-secondary-subtle" id="email">
-            </div>
+              <div class="mb-3 col">
+                <label for="email" class="form-label text-secondary fs-6">Email</label>
+                <input [(ngModel)]="registerRequest.Email" [ngModelOptions]="{standalone: true}" type="email"
+                  class="form-control border border-secondary-subtle" id="email">
+              </div>
             </div>
 
             <div class="mb-3 row">
               <div class="mb-3 col">
                 <label for="password" class="form-label text-secondary fs-6">Password</label>
-                <input [(ngModel)]="registerRequest.Password" [ngModelOptions]="{standalone: true}" type="password" class="form-control border border-secondary-subtle" id="password">
+                <input [(ngModel)]="registerRequest.Password" [ngModelOptions]="{standalone: true}" type="password"
+                  class="form-control border border-secondary-subtle" id="password">
               </div>
 
               <div class="mb-3 col">
                 <label for="confirmpassword" class="form-label text-secondary fs-6"> Confirm Password</label>
-                <input type="password" class="form-control border border-secondary-subtle"
-                  id="confirmpassword">
+                <input type="password" class="form-control border border-secondary-subtle" id="confirmpassword">
               </div>
             </div>
 
-              <div class=" container d-flex justify-content-center">
-                <button (click)="register()" type="submit" class="btn btn-primary align-items-center" style="width: 400px;">Sign Up</button>
-              </div>
+            <div class=" container d-flex justify-content-center">
+              <button (click)="register()" type="submit" class="btn btn-primary align-items-center"
+                style="width: 400px;">Sign Up</button>
+            </div>
 
           </form>
         </div>
       </div>
     </div>
 
-</div>
+  </div>
 
 </div>
 
-  <script>
-    var myTabs = new bootstrap.Tab(document.getElementById('signIn-tab'));
-    myTabs.show();
+<script>
+  var myTabs = new bootstrap.Tab(document.getElementById('signIn-tab'));
+  myTabs.show();
 
-    function showSignIn() {
-      var signInTab = new bootstrap.Tab(document.getElementById('signIn-tab'));
-      signInTab.show();
-    }
+  function showSignIn() {
+    var signInTab = new bootstrap.Tab(document.getElementById('signIn-tab'));
+    signInTab.show();
+  }
 
-    function showSignUp() {
-      var signUpTab = new bootstrap.Tab(document.getElementById('signUp-tab'));
-      signUpTab.show();
-    }
-  </script>
-
+  function showSignUp() {
+    var signUpTab = new bootstrap.Tab(document.getElementById('signUp-tab'));
+    signUpTab.show();
+  }
+</script>

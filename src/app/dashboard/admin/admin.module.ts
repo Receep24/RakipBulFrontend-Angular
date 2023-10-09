@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin.component';
-import { SidebarComponent } from '../sidebar/sidebar.component';
-import { HeaderComponent } from '../header/header.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { AdminEtkinlikModule } from './admin-etkinlik/admin-etkinlik.module';
-import { AdminIlanComponent } from './admin-ilan/admin-ilan.component';
 import { AdminUsersModule } from './admin-users/admin-users.module';
 import { AdminIlanModule } from './admin-ilan/admin-ilan.module';
 import { AdminYorumModule } from './admin-yorum/admin-yorum.module';
+import { LayoutsModule } from 'src/app/layouts/layouts.module';
+
+
 
 @NgModule({
   declarations: [
     AdminComponent,
-    SidebarComponent,
-    HeaderComponent
   ],
   imports: [
     CommonModule,
@@ -23,9 +21,23 @@ import { AdminYorumModule } from './admin-yorum/admin-yorum.module';
     AdminIlanModule,
     AdminUsersModule,
     AdminYorumModule,
+    LayoutsModule,
+ 
+    
   ],
   exports:[
-    AdminComponent
+    AdminComponent,
+
   ]
 })
 export class AdminModule {}
+
+
+
+// const routes : Routes = [
+//   {
+//     path: 'manage-users',
+//     component: ManageUsersComponent
+//   },
+  
+// ];
