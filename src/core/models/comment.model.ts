@@ -3,12 +3,10 @@ import { Events } from "./events.model";
 import { User } from "./user.model";
 
 export class Comment extends Entity<number> {
-    commentText: string='';
-    userID: number=0;
-    eventID: number=0;
-
+    commentText?: string;
+    userID?: number;
+    eventID?: number; 
     user?:User;
     events?:Events;
-
 
 }

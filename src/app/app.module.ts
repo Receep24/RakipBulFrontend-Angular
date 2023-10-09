@@ -19,9 +19,12 @@ import { FormsModule } from '@angular/forms';
 
 import { CommentComponent } from './comment/comment.component';
 import { JwtInterceptor } from 'src/core/services/interceptor/jwt.interceptor';
-import { AdminModule } from './admin/admin.module';
 import { NotfoundComponent } from './notfound/notfound.component';
+
+import { DashboardModule } from './dashboard/dashboard.module';
+
 import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -40,9 +43,6 @@ import { AppRoutingModule } from './app-routing.module';
     ProfileComponent,
     CommentComponent,
     NotfoundComponent,
-
-
-
   ],
   imports: [
     BrowserModule,
@@ -50,7 +50,7 @@ import { AppRoutingModule } from './app-routing.module';
     RouterModule,
     HttpClientModule,
     FormsModule,
-    AdminModule
+    DashboardModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
