@@ -1,0 +1,6 @@
+.form-control {
+    border: 2px solid #ccc; /* Şık bir border rengi seçebilirsiniz */
+    border-radius: 5px; /* Kenar yuvarlama */
+    padding: 10px; /* İçerik ile border arasındaki boşluk */
+  }
+  

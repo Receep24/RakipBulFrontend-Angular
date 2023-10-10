@@ -5,9 +5,6 @@ import { AppRoutingModule } from '../app-routing.module';
 import { UserModule } from './user/user.module';
 import { FormsModule } from '@angular/forms';
 
-
-
-
 @NgModule({
   declarations: [
 
@@ -17,7 +14,12 @@ import { FormsModule } from '@angular/forms';
     AdminModule,
     UserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    UserModule,
+    AppRoutingModule
+  ],
+  exports:[
+
   ]
 })
 export class DashboardModule { }

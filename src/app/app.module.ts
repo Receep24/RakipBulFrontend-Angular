@@ -24,7 +24,11 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { FormsModule } from '@angular/forms';
+
+import { LayoutsModule } from './layouts/layouts.module';
+
 
 
 @NgModule({
@@ -51,7 +55,8 @@ import { FormsModule } from '@angular/forms';
     RouterModule,
     HttpClientModule,
     FormsModule,
-    DashboardModule
+    DashboardModule,
+    LayoutsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
