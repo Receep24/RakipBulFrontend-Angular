@@ -96,8 +96,8 @@ export class ApiService {
   }
 
   //Silme kodları
-  deleteEntity<TEntity>(id: number, entityType: Type<TEntity>) {
-    return this.http.delete<BaseDataResponse<TEntity[]>>(environment.api_url + "/" + entityType.name + "/Delete?id=" + id).pipe(share()).toPromise();
+     deleteEntity<TEntity>(id: number, entityType: Type<TEntity>) {
+     return this.http.delete<BaseDataResponse<TEntity[]>>(environment.api_url + "/" + entityType.name + "/Delete?id=" + id).pipe(share()).toPromise();
   }
 
   //GetById kodları
@@ -114,6 +114,5 @@ export class ApiService {
   updateEntity<TEntity>(id: number, entity: TEntity, entityType: Type<TEntity>) {
     return this.http.put<BaseDataResponse<TEntity>>(environment.api_url + "/" + entityType.name + "/Update?id=" + id, entity).pipe(share()).toPromise();
   }
-
-
+  
 }

@@ -10,9 +10,10 @@ export class Advert extends Entity<number> {
   adressID: number = 0;
   
   sportName: string = '';
-  adress: Adress[] = [];
+  // adress: Adress[] = [];
   // swagger da [ varsa liste olarak karşılıyorsun , { tekil olarak karşılıyorsun  -- html tarafınıda düzenle
   sport?: Sports;
+  adress?: Adress;
   user: User[] = [];
 
 }

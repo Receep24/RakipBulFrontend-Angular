@@ -1,34 +1,38 @@
-<main class="container">
-<div id="main" class="main">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <table class="table table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th>Adres Metni</th>
-            <th>Kullanıcı</th>
-            <th>Spor</th>
-            <th>Sil / Güncelle</th>
-            <!-- Diğer sütun başlıkları -->
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let advert of adverts">
-            <td>{{ advert.advertText }}</td>
-            <td>{{ advert.userID }}</td>
-            <td>{{ advert.sport!.sportName }}</td>
-            <td><a href="#" class="btn btn-danger">SİL</a><a href="#" class="btn btn-warning">GÜNCELLE</a></td>
-            <!-- Diğer sütunlar için verileri ekle -->
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<div class="container" style="width: 100%; margin-left: 200px;">
+  <main id="main" class="main">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>İlan Açıklama</th>
+              <th>Kullanıcı</th>
+              <th>Spor</th>
+              <th>Adres</th>
+              <th>Şehir</th>
+              <th>İlçe</th>
+              <th>Edit</th>
+              <!-- Diğer sütun başlıkları -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let advert of adverts">
+              <td>{{ advert.advertText }}</td>
+              <td>{{ advert.userID }}</td>
+              <td>{{ advert.sport!.sportName }}</td>
+              <td>{{ advert.adressID}}</td>
+              <td>{{ advert.adress!.cityId}}</td>
+              <td>{{ advert.adress!.districtId}}</td>
+              <td>
+                <div class="button-group">
+                  <button (click)="confirmDelete(advert.id)" class="btn btn-danger" style="width: 8rem; margin-right: 15px;">Sil</button>
+                  <button class="btn btn-warning" style="width: 8rem;">Güncelle</button>
+                </div>
+              </td>
+              <!-- Diğer sütunlar için verileri ekle -->
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-success" style="width: 8rem; margin-right: 15px;">Ekle</button>
+  
+  </main>
   </div>
-</div>
-</main>
-
-
-
-
-
 
