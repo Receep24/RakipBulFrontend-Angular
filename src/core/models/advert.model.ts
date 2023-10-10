@@ -14,6 +14,7 @@ export class Advert extends Entity<number> {
   // swagger da [ varsa liste olarak karşılıyorsun , { tekil olarak karşılıyorsun  -- html tarafınıda düzenle
   sport?: Sports;
   adress?: Adress;
-  user: User[] = [];
+  user?: User;
+  // user: User[] = [];
 
 }

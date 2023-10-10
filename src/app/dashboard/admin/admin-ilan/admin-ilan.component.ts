@@ -6,6 +6,7 @@ import { ResponseStatus } from 'src/core/models/response/base-response.model';
 import { ApiService } from 'src/core/services/api/api.service';
 
 
+
 @Component({
   selector: 'app-admin-ilan',
   templateUrl: './admin-ilan.component.html',
@@ -29,7 +30,7 @@ export class AdminIlanComponent {
     });
 }
 
-//Yorum Sİlme
+//İlan Sİlme
 confirmDelete(id:any) {
   const confirmDelete = window.confirm("Silmek istiyor musunuz?");
   if(confirmDelete){
@@ -50,7 +51,73 @@ else{
 }
 
 
-public advertRequest: AdvertRequest =<AdvertRequest>{};
+showAddForm = false; // İlan ekleme formunu göstermek için bir bayrak
+newAdvert: Advert = new Advert(); // Yeni ilan verisi
+//İlan Ekleme
+  addAdvert() {
+    // Yeni ilanı API'ye göndermek için bir AdvertRequest oluşturun
+    const advertRequest: AdvertRequest = {
+      AdvertText: this.newAdvert.advertText,
+      UserID: this.newAdvert.userID,
+      SportID: this.newAdvert.sportID,
+      AdressID: this.newAdvert.adressID
+    };
+  
+    // API'ye yeni ilanı ekleyin
+    this.apiService.createEntity(advertRequest, 'Advert')
+      .then(response => {
+        if (response?.status === ResponseStatus.Ok) {
+          window.alert('İlan başarıyla eklendi!');
+          this.getAdverts(); // İlanları güncelle
+          this.cancelAdd(); // Ekleme formunu kapat
+        } else {
+          window.alert('İlan eklenirken hata oluştu.');
+        }
+      })
+      .catch(error => {
+        console.error('Hata oluştu:', error);
+        window.alert('İlan eklenirken hata oluştu.');
+      });
+  }
+// Ekleme formunu kapat
+  cancelAdd() {
+  this.showAddForm = false;
+  this.newAdvert = new Advert(); // Formu temizle
+  }
+
+
+  // TypeScript dosyanızda
+selectedAdvert: Advert | null = null;
+
+showUpdateForm(advert: Advert) {
+  this.selectedAdvert = advert;
+  // Diğer gerekli işlemleri burada yapabilirsiniz (örneğin, güncelleme formunu göstermek için bir bayrak ayarlamak).
+}
+
+updateAdvert() {
+  if (this.selectedAdvert) {
+    // Güncelleme verilerini API'ye gönderin
+    this.apiService.updateEntity(this.selectedAdvert.id!, this.selectedAdvert, Advert).then(response => {
+      if (response?.status === ResponseStatus.Ok) {
+        window.alert('İlan başarıyla güncellendi!');
+        // İlanları yeniden getirin veya güncel duruma göre ilanları güncelleyin
+        this.getAdverts();
+        this.cancelUpdate(); // Güncelleme formunu kapatın
+      } else {
+        window.alert('İlan güncellenirken hata oluştu.');
+      }
+    }).catch(error => {
+      console.error('Hata oluştu:', error);
+      window.alert('İlan güncellenirken hata oluştu.');
+    });
+  }
+}
+
+
+cancelUpdate() {
+  this.selectedAdvert = null;
+}
+
 
 
 }

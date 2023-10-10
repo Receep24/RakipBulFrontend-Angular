@@ -8,7 +8,9 @@ export class Adress {
   cityId:number =0;
   districtId:number =0;
 
-  cities:Cities [] = [];
-  districts:Districts [] = [];
+  // cities:Cities [] = [];
+  // districts:Districts [] = [];
+  cities?: Cities;
+  districts?: Districts;
 
 }
