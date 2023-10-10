@@ -3,19 +3,21 @@ import { CommonModule } from '@angular/common';
 import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { UserModule } from './user/user.module';
+import { FormsModule } from '@angular/forms';
 
 
 
 
 @NgModule({
   declarations: [
- 
+
   ],
   imports: [
     CommonModule,
-    AdminModule,   
+    AdminModule,
     UserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ]
 })
 export class DashboardModule { }

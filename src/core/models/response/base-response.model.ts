@@ -3,6 +3,7 @@ export interface BaseResponse {
   status: ResponseStatus;
 }
 
+
 export enum ResponseStatus {
   Ok,
   Error,
@@ -10,4 +11,5 @@ export enum ResponseStatus {
   Unauthorized,
   Invalid,
   NotFound,
+  Success
 }

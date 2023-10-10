@@ -9,6 +9,7 @@ import { AdminIlanComponent } from './admin-ilan/admin-ilan.component';
 import { AdminUsersModule } from './admin-users/admin-users.module';
 import { AdminIlanModule } from './admin-ilan/admin-ilan.module';
 import { AdminYorumModule } from './admin-yorum/admin-yorum.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AdminYorumModule } from './admin-yorum/admin-yorum.module';
     AdminIlanModule,
     AdminUsersModule,
     AdminYorumModule,
+    FormsModule
   ],
   exports:[
     AdminComponent

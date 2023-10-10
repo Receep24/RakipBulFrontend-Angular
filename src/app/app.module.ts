@@ -15,7 +15,7 @@ import { GirisComponent } from './giris/giris.component';
 import { EtkinlikComponent } from './etkinlik/etkinlik.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+
 
 import { CommentComponent } from './comment/comment.component';
 import { JwtInterceptor } from 'src/core/services/interceptor/jwt.interceptor';
@@ -24,6 +24,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
