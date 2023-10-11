@@ -22,18 +22,16 @@ const routes: Routes = [
   { path: 'profildetail', component: ProfileComponent },
   { path: 'comment', component: CommentComponent },
 
+  //   path: 'admin': Bu rota, "/admin" URL'sine eşlenir. Yani, bu rota sadece "/admin" URL'sinde çalışır.
 
-//   path: 'admin': Bu rota, "/admin" URL'sine eşlenir. Yani, bu rota sadece "/admin" URL'sinde çalışır.
+  // component: AdminComponent: Bu rota "/admin" URL'sine yönlendirildiğinde gösterilecek olan ana yönetici (admin) bileşenini belirtir.
 
-// component: AdminComponent: Bu rota "/admin" URL'sine yönlendirildiğinde gösterilecek olan ana yönetici (admin) bileşenini belirtir.
+  // canActivate: [AuthGuard]: Bu rota, AuthGuard adlı güvenlik denetimi tarafından korunur. canActivate ile belirtilen denetim, bu rotaya erişim izni verip vermemek konusunda karar verir. Yani, sadece yetkilendirilmiş kullanıcılar bu rotaya erişebilir.
 
-// canActivate: [AuthGuard]: Bu rota, AuthGuard adlı güvenlik denetimi tarafından korunur. canActivate ile belirtilen denetim, bu rotaya erişim izni verip vermemek konusunda karar verir. Yani, sadece yetkilendirilmiş kullanıcılar bu rotaya erişebilir.
+  // children: Bu özellik, "admin" rotasının alt rotalarını tanımlar. Burada dört farklı alt rota tanımlanmıştır: "users", "events", "adverts" ve "comments". Her biri farklı modülleri yükler ve ilgili alt bileşenleri görüntüler.
 
-// children: Bu özellik, "admin" rotasının alt rotalarını tanımlar. Burada dört farklı alt rota tanımlanmıştır: "users", "events", "adverts" ve "comments". Her biri farklı modülleri yükler ve ilgili alt bileşenleri görüntüler.
-
-// loadChildren: Bu özellik, ilgili rotaya erişildiğinde yüklenmesi gereken modülü belirtir. Dinamik olarak modül yüklemesi yapar ve modül yüklendikten sonra ilgili alt bileşenler görüntülenir. Bu, uygulamanın başlangıcında tüm modülleri yüklemek yerine sadece ihtiyaç duyulduğunda yüklemeyi sağlar, bu da uygulamanın performansını artırabilir.
+  // loadChildren: Bu özellik, ilgili rotaya erişildiğinde yüklenmesi gereken modülü belirtir. Dinamik olarak modül yüklemesi yapar ve modül yüklendikten sonra ilgili alt bileşenler görüntülenir. Bu, uygulamanın başlangıcında tüm modülleri yüklemek yerine sadece ihtiyaç duyulduğunda yüklemeyi sağlar, bu da uygulamanın performansını artırabilir.
   {
-
     /*
     
 const routes: Routes = [
@@ -63,7 +61,6 @@ const routes: Routes = [
   }
   */
 
-  
     path: 'admin',
     component: AdminComponent,
     canActivate: [AuthGuard],
@@ -98,14 +95,35 @@ const routes: Routes = [
       },
     ],
   },
-  // {
-  //   path: 'user',
-  //   component: UserComponent,
-  //   canActivate: [AuthGuard],
-  //   children: [{
+  {
+    path: 'user',
+    component: UserComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'profile',
+        loadChildren: () =>
+          import(
+            'src/app/dashboard/user/user-profile/user-profile.module'
+          ).then((m) => m.UserProfileModule),
+      },
+      {
+        path: 'adverts',
+        loadChildren: () =>
+          import(
+            'src/app/dashboard/user/user-adverts/user-adverts.module'
+          ).then((m) => m.UserAdvertsModule),
+      },
 
-  //   }],
-  // },
+      {
+        path: 'events',
+        loadChildren: () =>
+          import('src/app/dashboard/user/user-event/user-event.module').then(
+            (m) => m.UserEventModule
+          ),
+      },
+    ],
+  },
 
   { path: 'not-found', component: NotfoundComponent },
   { path: '**', redirectTo: '/not-found' },

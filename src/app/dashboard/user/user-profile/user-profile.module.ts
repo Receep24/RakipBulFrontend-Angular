@@ -1,24 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminUsersComponent } from './admin-users.component';
+import { UserProfileComponent } from './user-profile.component';
 import { RouterModule } from '@angular/router';
-import { PopupComponent } from './popup/popup.component';
 import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
-    AdminUsersComponent,
-    PopupComponent,
+    UserProfileComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     RouterModule.forChild([
-      {path:'',component:AdminUsersComponent}
+      {path:'',component:UserProfileComponent}
     ])
-   
   ]
 })
-export class AdminUsersModule { }
+export class UserProfileModule { }

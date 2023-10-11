@@ -20,21 +20,11 @@ import { Comment } from 'src/core/models/comment.model';
   providedIn: 'root',
 })
 export class ApiService {
-
-
-
-
-
-
   private endpoint = environment.api_url;
-
   //constructor fonksiyonu, HttpClient nesnesini enjekte eder ve HTTP isteklerini yapmak için kullanır.
-
   constructor(private readonly http: HttpClient) {}
-
   //login fonksiyonu, kullanıcı giriş isteğini gerçekleştirir.
   // HttpClient.post fonksiyonunu kullanarak API'ye LoginRequest nesnesini ve isteği yapar.
-
   login(request: LoginRequest): Observable<BaseDataResponse<TokenResponse>> {
     return this.http
       .post<BaseDataResponse<TokenResponse>>(
@@ -121,12 +111,6 @@ export class ApiService {
   getEntityById<TEntity>(id: number, entityType: Type<TEntity>) {
     return this.http.get<BaseDataResponse<TEntity>>(`${environment.api_url}/${entityType.name}/GetById?id=${id}`).pipe(share()).toPromise();
   }
-
-
-
-
-
-
   //Get by Id kodları
   // getEntityById<TEntity>(id: number, entityType: Type<TEntity>) {
   //   return this.http.get<BaseDataResponse<TEntity[]>>(environment.api_url + "/" + entityType.name + "/GetById?id=" + id).pipe(share()).toPromise();

@@ -45,8 +45,7 @@ export class AuthService {
   public async login(request: LoginRequest): Promise<ResponseStatus> {
     const loginResponse = await this.apiService.login(request).toPromise();
 
-    let status = loginResponse!.status;
-    
+    let status = loginResponse!.status;  
 
 
     if (status == ResponseStatus.Ok) {      

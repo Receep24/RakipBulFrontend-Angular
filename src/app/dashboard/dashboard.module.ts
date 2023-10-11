@@ -14,8 +14,7 @@ import { FormsModule } from '@angular/forms';
     AdminModule,
     UserModule,
     AppRoutingModule,
-    FormsModule,
-    UserModule,
+    FormsModule,    
     AppRoutingModule
   ],
   exports:[

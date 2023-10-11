@@ -17,10 +17,11 @@ export class AdminUsersComponent implements OnInit {
     private apiService: ApiService,
     private readonly httpClient: HttpClient
   ) {}
-
+  formOpen: boolean = false;
   isPopupOpen: boolean = false;
-  userIdToDelete: number | undefined;
+  userId: number | undefined;
   users: User[] = [];
+  editedUser: User | null = null;
   ngOnInit() {
     this.getUsers();
   }
@@ -31,30 +32,48 @@ export class AdminUsersComponent implements OnInit {
     });
   }
 
-  // onDelete(id: number | undefined) {
-  //   if (id !== undefined) {
-  //     this.delete(id).then((response) => {
-  //       if (response?.status == ResponseStatus.Ok) {
-  //         this.getUsers();
-  //       }
-  //     });
-  //   }
-  // }
-  // delete(id: number) {
-  //   return this.apiService.deleteEntity(id, User);
-  // }
+  showUpdateForm(user:User){
+    this.editedUser = user;
+  }
+ 
+  updateUser() {
+    if (this.editedUser) {
+      // Güncelleme verilerini API'ye gönderin
+      this.apiService
+        .updateEntity(this.editedUser.id!, this.editedUser, User)
+        .then((response) => {
+          if (response?.status === ResponseStatus.Ok) {
+            window.alert('Kullanıcı başarıyla güncellendi!');
+            // İlanları yeniden getirin veya güncel duruma göre ilanları güncelleyin
+            let user = this.getUsers();
+            this.cancelUpdate(); // Güncelleme formunu kapatın
+            this.formOpen=false;
+            console.log(user);
+          } else {
+            window.alert('Kullanıcı güncellenirken hata oluştu.');
+          }
+        })
+        .catch((error) => {
+          console.error('Hata oluştu:', error);
+          window.alert('Kullanıcı güncellenirken hata oluştu.');
+        });
+    }
+  }
+  cancelUpdate() {
+    this.editedUser = null;
+  }
 
   onDelete(id: number | undefined) {
     if (id !== undefined) {
-      this.userIdToDelete = id; // Store the user ID to delete
+      this.userId = id; // Store the user ID to delete
       const message = 'Are you sure you want to delete this user?';
       this.openPopup(message);
     }
   }
 
   confirmDelete() {
-    if (this.userIdToDelete !== undefined) {
-      this.delete(this.userIdToDelete).then((response) => {
+    if (this.userId !== undefined) {
+      this.delete(this.userId).then((response) => {
         if (response?.status == ResponseStatus.Ok) {
           this.getUsers();
         }
@@ -78,6 +97,4 @@ export class AdminUsersComponent implements OnInit {
   closePopup() {
     this.isPopupOpen = false;
   }
-
- 
 }

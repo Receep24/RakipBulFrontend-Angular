@@ -27,8 +27,8 @@
             <div class="button-group">
               <!-- admin-users.component.html -->
               <button class="btn btn-danger" style="width: 8rem; margin-right: 10px;"
-               (click)="onDelete(user.id)" >Sil</button>
-              <button class="btn btn-warning" style="width: 8rem;">Güncelle</button>
+                (click)="onDelete(user.id)">Sil</button>
+              <button class="btn btn-warning" style="width: 8rem;" (click)="showUpdateForm(user)">Güncelle</button>
             </div>
           </td>
         </tr>
@@ -36,9 +36,36 @@
     </table>
   </main>
 </div>
-<app-popup
-  *ngIf="isPopupOpen"
-  [confirmationMessage]="'Are you sure?'"
-  (onConfirm)="confirmDelete()"
-  (onCancel)="cancelDelete()"
-></app-popup>
+<app-popup *ngIf="isPopupOpen" [confirmationMessage]="'Are you sure?'" (onConfirm)="confirmDelete()"
+  (onCancel)="cancelDelete()"></app-popup>
+
+
+
+<div class="modal-overlay" *ngIf="editedUser">
+  <div class="modal-dialog">
+    <h2>Kullanıcı Güncelle</h2>
+    <form>
+      <div class="form-group">
+        <label for="updatedFirstName" style="color: gray;">İsim</label>
+        <input type="text" class="form-control" id="updatedFirstName" name="updateFirstName"
+          [(ngModel)]="editedUser.firstName">
+      </div>
+
+      <div class="form-group">
+        <label for="updatedLastName" style="color: gray;">Soyisim</label>
+        <input type="text" class="form-control" id="updatedLastName" name="updateLastName"
+          [(ngModel)]="editedUser.lastName">
+      </div>
+      <div class="form-group">
+        <label for="updatedEmail" style="color: gray;">Email</label>
+        <input type="text" class="form-control" id="updatedEmail" name="updatedEmail" [(ngModel)]="editedUser.email">
+      </div>
+
+      <div class="button-container">
+        <button type="button" (click)="cancelUpdate()" class="btn btn-secondary">İptal</button>
+        <button type="button" (click)="updateUser()" class="btn btn-primary">Kaydet</button>
+      </div>
+
+    </form>
+  </div>
+</div>

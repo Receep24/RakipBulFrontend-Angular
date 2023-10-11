@@ -38,7 +38,7 @@ export class SignComponent {
       await this.router.navigate(['/admin']);
     }
     if (status == ResponseStatus.Ok && this.user?.userType === 1) {
-      await this.router.navigate(['/user']);
+      await this.router.navigate(['/anasayfa']);
     } 
     else if (status == ResponseStatus.Invalid)
       this.loginRequest.Password = '';
