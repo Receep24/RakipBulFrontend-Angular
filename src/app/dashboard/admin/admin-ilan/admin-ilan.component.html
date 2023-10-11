@@ -27,7 +27,6 @@
               <button (click)="showUpdateForm(advert)" class="btn btn-warning" style="width: 8rem;">Güncelle</button>
             </div>
           </td>
-          <!-- Diğer sütunlar için verileri ekle -->
         </tr>
       </tbody>
     </table>
@@ -70,22 +69,22 @@
       <form>
         <!-- Güncelleme için gerekli input alanları burada olmalı -->
         <div class="form-group">
-          <label for="updatedAdvertText" style="color: gray;">İlan Açıklama</label>
+          <label for="updatedAdvertText" style="color: gray; margin-top: 10px;">İlan Açıklama</label>
           <input type="text" class="form-control" id="updatedAdvertText" name="updatedAdvertText" [(ngModel)]="selectedAdvert.advertText">
         </div>
 
         <div class="form-group">
-          <label for="updatedUserId" style="color: gray;">Kullanıcı</label>
+          <label for="updatedUserId" style="color: gray; margin-top: 10px;">Kullanıcı</label>
           <input type="number" class="form-control" id="updatedUserId" name="updatedUserId" [(ngModel)]="selectedAdvert.userID">
         </div>
 
         <div class="form-group">
-          <label for="updatedSportId" style="color: gray;">Spor</label>
+          <label for="updatedSportId" style="color: gray; margin-top: 10px;">Spor</label>
           <input type="number" class="form-control" id="updatedSportId" name="updatedSportId" [(ngModel)]="selectedAdvert.sportID">
         </div>
 
         <div class="form-group">
-          <label for="updatedAdressId" style="color: gray;">Adres</label>
+          <label for="updatedAdressId" style="color: gray; margin-top: 10px;">Adres</label>
           <input type="number" class="form-control" id="updatedAdressId" name="updatedAdressId" [(ngModel)]="selectedAdvert.adressID">
         </div>
         <!-- Diğer güncelleme alanlarını burada ekleyin -->
@@ -97,9 +96,9 @@
             <button type="button" (click)="updateAdvert()" class="btn btn-primary" style="width: 100%;">Kaydet</button>
           </div>
         </div>
-        
       </form>
     </div>
+    
 
 
 
