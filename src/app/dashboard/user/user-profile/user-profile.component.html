@@ -43,18 +43,42 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <p class="mb-0">Address</p>
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <p class="text-muted mb-0"></p>
-                                    </div>
-                                </div>
-                                <button class="btn btn-primary">Profili Düzenle</button>
+                                
                             </div>
                         </div>
                     </div>
+                    <button class="btn btn-primary" (click)="openEditProfileModal(editProfileContent)">Profili
+                        Düzenle</button>
+                    <ng-template class="model-overlay" #editProfileContent let-modal>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Edit Profile</h4>
+                            <button type="button" class="close" (click)="modal.dismiss('Cross click')">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-dialog" >
+                            <!-- Form for editing user information -->
+                            <!-- Replace this with your form fields -->
+                            <form>
+                                <div class="form-group">
+                                    <label for="firstName" style="color: black;">First Name</label>
+                                    <input type="text" id="firstName" class="form-control" [(ngModel)]="user.firstName"
+                                        [ngModelOptions]="{ standalone: true }">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName" style="color: black;">Last Name</label>
+                                    <input type="text" id="lastName" class="form-control" [(ngModel)]="user.lastName"
+                                        [ngModelOptions]="{ standalone: true }">
+                                </div>                               
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" (click)="updateUser()">Save</button>
+                            <button type="button" class="btn btn-secondary"
+                                (click)="modal.dismiss('Cross click')">Close</button>
+                        </div>
+                    </ng-template>
                 </div>
             </div>
         </div>

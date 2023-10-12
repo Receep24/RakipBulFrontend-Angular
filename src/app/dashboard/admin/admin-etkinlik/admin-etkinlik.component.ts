@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Events } from 'src/core/models/events.model';
 import { EventsRequest } from 'src/core/models/request/events-request.model';
 import { ResponseStatus } from 'src/core/models/response/base-response.model';
+import { UserEvents } from 'src/core/models/userevents.model';
 import { ApiService } from 'src/core/services/api/api.service';
 
 @Component({
@@ -15,10 +16,12 @@ export class AdminEtkinlikComponent {
     private router: Router) {}
 
   events: Events[] = [];
+  userEvents:UserEvents[]=[];
   
   ngOnInit() {
     this.getEvents();
     console.log(this.events);
+    this.getUserEvents();
   }
 
   //Etkinlikleri Getirme
@@ -29,6 +32,12 @@ export class AdminEtkinlikComponent {
     });
   }
 
+  getUserEvents() {
+    this.apiService.getAllEntities(UserEvents).subscribe((response) => {
+      this.userEvents = response.data;
+      console.log(this.userEvents);
+    });
+  }
   //Id'ye Göre Etkinlik Silme
 confirmDelete(id:any) {
   const confirmDelete = window.confirm("Silmek istiyor musunuz?");

@@ -3,5 +3,4 @@ export interface AdvertRequest {
     UserID:number;
     SportID:number;
     AdressID:number;
-
 }

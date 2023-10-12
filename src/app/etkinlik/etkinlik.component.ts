@@ -30,7 +30,7 @@ export class EtkinlikComponent implements OnInit {
     } else if (this.selectedSport === 'Voleybol') {
       this.eventsToShow = this.events.filter((event) => event.sportID === 4);
     } else if (this.selectedSport === 'Futbol') {
-      this.eventsToShow = this.events.filter((event) => event.sportID === 27);
+      this.eventsToShow = this.events.filter((event) => event.sportID === 1);
     } else if (this.selectedSport === 'Basketbol') {
       this.eventsToShow = this.events.filter((event) => event.sportID === 28);
     } else if (this.selectedSport === 'Tenis') {

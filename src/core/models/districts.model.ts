@@ -1,9 +1,9 @@
-
-import { Cities } from "./cities.model";
+import { Adress } from './adress.model';
+import { Cities } from './cities.model';
 export class Districts {
-  id?:number;
-  districtName?:string;
-  cityId?:number;
-
-  cities : Cities [] = [];
+  districtId: number = 0;
+  districtName: string = '';
+  cityId: number = 0;
+  city: Cities | null = null;
+  addresses: Adress[] = [];
 }

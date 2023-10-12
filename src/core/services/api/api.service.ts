@@ -13,6 +13,8 @@ import { User } from '../../models/user.model';
 import { BaseResponse } from 'src/core/models/response/base-response.model';
 import { Advert } from 'src/core/models/advert.model';
 import { Comment } from 'src/core/models/comment.model';
+import { Districts } from 'src/core/models/districts.model';
+import { Cities } from 'src/core/models/cities.model';
 
 
 
@@ -121,5 +123,27 @@ export class ApiService {
     return this.http.put<BaseDataResponse<TEntity>>(environment.api_url + "/" + entityType.name + "/Update?id=" + id, entity).pipe(share()).toPromise();
   }
 
+  getCity(cityId: number): Observable<BaseDataResponse<Cities>> {
+    return this.http
+      .get<BaseDataResponse<Cities>>(`${this.endpoint}/Cities/GetById?id=${cityId}`)
+      .pipe(
+        map((result) => {
+          return result;
+        })
+      );
+  }
+
+  // İlçeleri getiren metot
+  getDistricts(cityId: number): Observable<BaseDataResponse<Districts[]>> {
+    return this.http
+      .get<BaseDataResponse<Districts[]>>(
+        `${this.endpoint}/Districts/GetByCityId?cityId=${cityId}`
+      )
+      .pipe(
+        map((result) => {
+          return result;
+        })
+      );
+  }
 
 }

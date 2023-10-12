@@ -4,27 +4,32 @@
         <thead class="thead-dark">
           <tr>
             <th>Etkinlik Adı</th>
-            <th>Etkinlik Tarihi</th>
-            <th>Adres</th>
-            <th>Kullanıcı</th>
-            <th>Spor</th>
-            <th>Sil / Güncelle</th>
+            <th>Etkinlik Sahibi</th>
+            <th>Tarih</th>
+            <th>İl</th>
+            <th>İlçe</th>
+            <th>Sil / Güncelle</th>55
             <!-- Diğer sütun başlıkları -->
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let events of events">
-            <td>{{ events.eventName }}</td>
-            <td>{{ events.eventDate }}</td>
-            <td>{{ events.adress?.adressName}}</td>
-            <td>{{ events.userID}}</td>
-            <td>{{ events.sports?.sportName}}</td>
+          <tr *ngFor="let userEvents of userEvents">
+            <td>{{ userEvents.events?.eventName }}</td>
+            <td>{{ userEvents.user?.userName }}</td>
+            <td>{{ userEvents.events?.eventDate}}</td>
+            <td>{{ userEvents.events?.adress?.city?.cityName}}</td>
+            <td>{{ userEvents.events?.adress?.district?.districtName}}</td>
+            <td>{{ userEvents.events?.sports?.sportName}}</td>
+
+            
+
+          
             <!-- <td>{{ events.user?.userName}}</td>
             <td>{{ events.sport?.sportName}}</td> -->
             <td>
               <div class="button-group">
-                <button (click)="confirmDelete(events.id)" class="btn btn-danger" style="width: 8rem; margin-right: 15px;">Sil</button>
-                <button (click)="showUpdateForm(events)" class="btn btn-warning" style="width: 8rem;">Güncelle</button>
+                <!-- <button (click)="confirmDelete(userEvents.id)" class="btn btn-danger" style="width: 8rem; margin-right: 15px;">Sil</button>
+                <button (click)="showUpdateForm(userEvents)" class="btn btn-warning" style="width: 8rem;">Güncelle</button> -->
               </div>
             </td>
             <!-- Diğer sütunlar için verileri ekle -->

@@ -1,1 +1,22 @@
-<p>user-event works!</p>
+<div style="margin-top: 500px;">
+  <div>
+    <label for="city">Şehir:</label>
+    <select id="city" [(ngModel)]="selectedCityId" (change)="onCityChange()">
+      <option *ngFor="let city of cities" [value]="city.cityId">{{ city.cityName }}</option>
+    </select>
+  </div>
+  
+  <div>
+    <label for="district">İlçe:</label>
+    <select id="district" [(ngModel)]="newAddress.districtId">
+      <option *ngFor="let district of districts" [value]="district.districtId">{{ district.districtName }}</option>
+    </select>
+  </div>
+  
+  <div>
+    <label for="addressName">Adres Adı:</label>
+    <input id="addressName" [(ngModel)]="newAddress.adressName" type="text">
+  </div>
+  
+  <button (click)="saveAddress()">Adresi Kaydet</button>
+</div>
