@@ -1,1 +1,95 @@
+<div class="container" style="width: 100%; margin-left: 200px;">
+<main id="main" class="main">
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>İlan Açıklama</th>
+      <th>Kullanıcı</th>
+      <th>Spor</th>
+      <th>Adres</th>
+      <th>Şehir</th>
+      <th>İlçe</th>
+      <th>Edit</th>
+      <!-- Diğer sütun başlıkları -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let advert of adverts">
+      <td>{{ advert.advertText }}</td>
+      <td>{{ advert.user?.userName }}</td>
+      <td>{{ advert.sport!.sportName }}</td>
+      <td>{{ advert.adress?.adressName}}</td>
+      <td>{{ advert.adress!.city?.cityName}}</td>
+      <td>{{ advert.adress!.district?.districtName}}</td>
+      <td>
+        <div class="button-group">
+          <button (click)="confirmDelete(advert.id)" class="btn btn-danger">Sil</button>
+          <button (click)="showUpdateForm(advert)" class="btn btn-warning" >Güncelle</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="showAddForm = true" class="btn btn-success" style="width: 8rem; margin-right: 15px;">Ekle</button>
+
+<!-- Yeni ilan ekleme formu (başlangıçta gizli) -->
+<div *ngIf="showAddForm" class="advert-card">
+  <h2 class="card-title">Yeni İlan Ekle</h2>
+  <form>
+    <div class="form-group">
+      <label for="advertText" class="label-text">İlan Açıklama</label>
+      <input type="text" class="form-control" id="advertText" name="advertText" [(ngModel)]="newAdvert.advertText">
+    </div>
+    <div class="form-group">
+      <label for="userID" class="label-text">Kullanıcı</label>
+      <input type="number" class="form-control" id="userID" name="userID" [(ngModel)]="newAdvert.userID">
+    </div>
+    <div class="form-group">
+      <label for="sportID" class="label-text">Spor</label>
+      <input type="number" class="form-control" id="sportID" name="sportID" [(ngModel)]="newAdvert.sportID">
+    </div>
+    <div class="form-group">
+      <label for="adressID" class="label-text">Adres</label>
+      <input type="number" class="form-control" id="adressID" name="adressID" [(ngModel)]="newAdvert.adressID">
+    </div>
+    <div class="button-container">
+      <button type="button" (click)="cancelAdd()" class="btn btn-secondary">İptal</button>
+      <button type="button" (click)="addAdvert()" class="btn btn-primary">Kaydet</button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="selectedAdvert">
+  <div class="advert-card">
+    <h2 class="card-title">İlan Güncelle</h2>
+    <form>
+      <div class="form-group">
+        <label for="updatedAdvertText">İlan Açıklama</label>
+        <input type="text" class="form-control" id="updatedAdvertText" name="updatedAdvertText" [(ngModel)]="selectedAdvert.advertText">
+      </div>
+
+      <div class="form-group">
+        <label for="updatedUserId">Kullanıcı</label>
+        <input type="number" class="form-control" id="updatedUserId" name="updatedUserId" [(ngModel)]="selectedAdvert.userID">
+      </div>
+
+      <div class="form-group">
+        <label for="updatedSportId">Spor</label>
+        <input type="number" class="form-control" id="updatedSportId" name="updatedSportId" [(ngModel)]="selectedAdvert.sportID">
+      </div>
+
+      <div class="form-group">
+        <label for="updatedAdressId">Adres</label>
+        <input type="number" class="form-control" id="updatedAdressId" name="updatedAdressId" [(ngModel)]="selectedAdvert.adressID">
+      </div>
+      <!-- Diğer güncelleme alanlarını burada ekleyin -->
+      <div class="button-container">
+        <button type="button" (click)="cancelUpdate()" class="btn btn-secondary">İptal</button>
+        <button type="button" (click)="updateAdvert()" class="btn btn-primary">Kaydet</button>
+      </div>
+    </form>
+  </div>
+</div>
+</main>
+</div>
 
