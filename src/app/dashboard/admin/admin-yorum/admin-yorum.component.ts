@@ -84,6 +84,8 @@ async addComment() {
       alert("Yorum Ekleme Başarılı");
       this.getComments();
       this.showCommentForm = false;
+      console.log(status);
+      
     } else {
       alert("Yorum Ekleme Başarısız");
     }

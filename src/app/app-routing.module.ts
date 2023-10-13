@@ -93,6 +93,13 @@ const routes: Routes = [
             (m) => m.AdminYorumModule
           ),
       },
+      {
+        path: 'adress',
+        loadChildren: () =>
+          import(
+            'src/app/dashboard/admin/admin-adress/admin-adress.module'
+          ).then((m) => m.AdminAdressModule),
+      },
     ],
   },
   {
