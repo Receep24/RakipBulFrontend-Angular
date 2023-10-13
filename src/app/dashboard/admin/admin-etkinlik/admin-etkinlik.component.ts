@@ -113,7 +113,6 @@ export class AdminEtkinlikComponent {
     setTimeout(() => {
       this.addUserEvent();
     }, 2000);
-    
   }
   async addUserEvent() {
     const latestEvent = this.events[this.events.length - 1];
@@ -131,7 +130,7 @@ export class AdminEtkinlikComponent {
     );
     if (status?.status === ResponseStatus.Ok) {
       alert('UserEvents Ekleme Başarılı');
-      this.showAddForm=false;
+      this.showAddForm = false;
       console.log(status);
     } else {
       alert('UserEvents Ekleme Başarısız');
@@ -146,9 +145,11 @@ export class AdminEtkinlikComponent {
 
   selectedEvents: Events | null = null;
   selectedUserEvents: UserEvents | null = null;
-
+  updateShowForm: boolean = false;
   showUpdateForm(user: UserEvents) {
+    this.updateShowForm= true;
     this.selectedUserEvents = user;
+    
   }
 
   updateEvents() {

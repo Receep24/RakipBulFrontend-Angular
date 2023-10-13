@@ -11,7 +11,7 @@ import { ApiService } from 'src/core/services/api/api.service';
   styleUrls: ['./user-adverts.component.css']
 })
 export class UserAdvertsComponent {
-  messageService: any;
+  messageService: any;  
   constructor(private readonly apiService: ApiService,
     private router: Router) { }
 
@@ -52,6 +52,7 @@ showAddForm = false; // İlan ekleme formunu göstermek için bir bayrak
 newAdvert: Advert = new Advert(); // Yeni ilan verisi
 //İlan Ekleme
   addAdvert() {
+    
     // Yeni ilanı API'ye göndermek için bir AdvertRequest oluşturun
     const advertRequest: AdvertRequest = {
       AdvertText: this.newAdvert.advertText,

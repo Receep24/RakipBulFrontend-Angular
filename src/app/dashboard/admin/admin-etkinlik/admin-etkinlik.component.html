@@ -35,9 +35,11 @@
 
     <button (click)="showAddForm = true" class="btn btn-success" style="width: 8rem; margin-right: 15px;">Ekle</button>
 
-    <!-- Yeni ilan ekleme formu (başlangıçta gizli) -->
+
+
     <div class="modal-overlay" *ngIf="showAddForm">
       <div class="modal-dialog">
+        <h2 style="margin-top: 15px;">Yeni Etkinlik Ekle</h2>
         <form>
           <div class="form-group">
             <label for="eventText" style="color: gray;">Etkinlik Adı</label>
@@ -80,47 +82,51 @@
           </div>
         </form>
       </div>
-      <div *ngIf="selectedEvents">
-        <h2 style="margin-top: 15px;">Etkinlik Güncelle</h2>
-        <form>
-          <!-- Güncelleme için gerekli input alanları burada olmalı -->
-          <div class="form-group">
-            <label for="updatedEventsText" style="color: gray; margin-top: 10px;">Etkinlik</label>
-            <input type="text" class="form-control" id="updatedEventsText" name="updatedEventsText"
-              [(ngModel)]="selectedEvents.eventName">
-          </div>
-
-          <div class="form-group">
-            <label for="updatedEventsDate" style="color: gray; margin-top: 10px;">Etkinlik Tarihi</label>
-            <input type="text" class="form-control" id="updatedEventsDate" name="updatedEventsDate"
-              [(ngModel)]="selectedEvents.eventDate">
-          </div>
-
-          <div class="form-group">
-            <label for="updatedAdressId" style="color: gray; margin-top: 10px;">Adres</label>
-            <input type="number" class="form-control" id="updatedAdressId" name="updatedAdressId"
-              [(ngModel)]="selectedEvents.adressID">
-          </div>
-
-          <div class="form-group">
-            <label for="updatedSportId" style="color: gray; margin-top: 10px;">Spor</label>
-            <input type="number" class="form-control" id="updatedSportId" name="updatedSportId"
-              [(ngModel)]="selectedEvents.sportID">
-          </div>
-
-          <!-- Diğer güncelleme alanlarını burada ekleyin -->
-          <div
-            style="margin-top: 15px; width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center;">
-            <div style="width: 50%;">
-              <button type="button" (click)="cancelUpdate()" class="btn btn-secondary"
-                style="width: 100%;">İptal</button>
+    </div>   
+    <div class="modal-overlay" *ngIf="updateShowForm">
+      <div class="modal-dialog">
+        <div *ngIf="selectedEvents">
+          <h2 style="margin-top: 15px;">Etkinlik Güncelle</h2>
+          <form>
+            <!-- Güncelleme için gerekli input alanları burada olmalı -->
+            <div class="form-group">
+              <label for="updatedEventsText" style="color: gray; margin-top: 10px;">Etkinlik</label>
+              <input type="text" class="form-control" id="updatedEventsText" name="updatedEventsText"
+                [(ngModel)]="selectedEvents.eventName">
             </div>
-            <div style="width: 50%; margin-top: 10px;">
-              <button type="button" (click)="updateEvents()" class="btn btn-primary"
-                style="width: 100%;">Kaydet</button>
+
+            <div class="form-group">
+              <label for="updatedEventsDate" style="color: gray; margin-top: 10px;">Etkinlik Tarihi</label>
+              <input type="text" class="form-control" id="updatedEventsDate" name="updatedEventsDate"
+                [(ngModel)]="selectedEvents.eventDate">
             </div>
-          </div>
-        </form>
+
+            <div class="form-group">
+              <label for="updatedAdressId" style="color: gray; margin-top: 10px;">Adres</label>
+              <input type="number" class="form-control" id="updatedAdressId" name="updatedAdressId"
+                [(ngModel)]="selectedEvents.adressID">
+            </div>
+
+            <div class="form-group">
+              <label for="updatedSportId" style="color: gray; margin-top: 10px;">Spor</label>
+              <input type="number" class="form-control" id="updatedSportId" name="updatedSportId"
+                [(ngModel)]="selectedEvents.sportID">
+            </div>
+
+            <!-- Diğer güncelleme alanlarını burada ekleyin -->
+            <div
+              style="margin-top: 15px; width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center;">
+              <div style="width: 50%;">
+                <button type="button" (click)="cancelUpdate()" class="btn btn-secondary"
+                  style="width: 100%;">İptal</button>
+              </div>
+              <div style="width: 50%; margin-top: 10px;">
+                <button type="button" (click)="updateEvents()" class="btn btn-primary"
+                  style="width: 100%;">Kaydet</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </main>
