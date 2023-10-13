@@ -27,14 +27,14 @@ export class EtkinlikComponent implements OnInit {
   filterEvents() {
     if (this.selectedSport === 'Tümü') {
       this.eventsToShow = this.events;
-    } else if (this.selectedSport === 'Voleybol') {
-      this.eventsToShow = this.events.filter((event) => event.sportID === 4);
     } else if (this.selectedSport === 'Futbol') {
       this.eventsToShow = this.events.filter((event) => event.sportID === 1);
+    } else if (this.selectedSport === 'Voleybol') {
+      this.eventsToShow = this.events.filter((event) => event.sportID === 2);
     } else if (this.selectedSport === 'Basketbol') {
-      this.eventsToShow = this.events.filter((event) => event.sportID === 28);
+      this.eventsToShow = this.events.filter((event) => event.sportID === 3);
     } else if (this.selectedSport === 'Tenis') {
-      this.eventsToShow = this.events.filter((event) => event.sportID === 29);
+      this.eventsToShow = this.events.filter((event) => event.sportID === 4);
     }
   }
 }
