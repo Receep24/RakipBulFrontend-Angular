@@ -5,9 +5,8 @@ import { User } from './user.model';
 
 export class Events extends Entity<number> {
   eventName: string = '';
-  eventDate: string = '';
+  eventDate?: Date ;
   sportID: number = 0;
-  userID: number = 0;
   adressID: number = 0;
   
   sports?:Sports;

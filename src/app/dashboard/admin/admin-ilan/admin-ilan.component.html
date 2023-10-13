@@ -19,8 +19,8 @@
           <td>{{ advert.user?.userName }}</td>
           <td>{{ advert.sport!.sportName }}</td>
           <td>{{ advert.adress?.adressName}}</td>
-          <td>{{ advert.adress!.cityId}}</td>
-          <td>{{ advert.adress!.districtId}}</td>
+          <td>{{ advert.adress?.city?.cityName}}</td>
+          <td>{{ advert.adress?.district?.districtName}}</td>
           <td>
             <div class="button-group">
               <button (click)="confirmDelete(advert.id)" class="btn btn-danger" style="width: 8rem; margin-right: 15px;">Sil</button>
