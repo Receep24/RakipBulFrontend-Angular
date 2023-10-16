@@ -21,8 +21,8 @@
           <td>{{ user.lastName }}</td>
           <td>{{ user.userName}}</td>
           <td>{{ user.email }}</td>
-          <td>{{user.gender}}</td>
-          <td>{{user.userType}}</td>
+          <td>{{ user.gender === 0 ? 'Erkek' : 'Kadın' }}</td>
+          <td>{{ user.userType === 0 ? 'admin' : 'user' }}</td>
           <td>
             <div class="button-group">
               <!-- admin-users.component.html -->

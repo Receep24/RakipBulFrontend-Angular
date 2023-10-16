@@ -11,7 +11,6 @@ import { ApiService } from 'src/core/services/api/api.service';
   selector: 'app-admin-yorum',
   templateUrl: './admin-yorum.component.html',
   styleUrls: ['./admin-yorum.component.css'],
-
 })
 export class AdminYorumComponent implements OnInit {
   constructor(private apiService: ApiService, private router: Router) {}
@@ -23,8 +22,6 @@ export class AdminYorumComponent implements OnInit {
   commentRequest: CommentRequest = new CommentRequest();
 
   showCommentForm: boolean = false;
-
-
 
   ngOnInit() {
     this.getComments();
@@ -53,78 +50,80 @@ export class AdminYorumComponent implements OnInit {
     this.showCommentForm = true;
   }
 
-
-
   //Yorum Sİlme
-  confirmDelete(id:any) {
-    const confirmDelete = window.confirm("Silmek istiyor musunuz?");
-    if(confirmDelete){
-      let status= this.apiService.deleteEntity(id,Comment);
-status.then((response)=>{
-  if (response?.status == ResponseStatus.Ok) {
-    window.alert('Yorum silindi!')
-    this.getComments();
-    this.router.navigate(['admin/comments']);
-  }
-  else{
-    window.alert('silme işleminde hata oluştu')
-  }
-});
-    }else{
-      window.alert("Silme işlemi iptal edildi");
-    }
-
-}
-
-// Yorum Ekleme
-async addComment() {
-  if (this.commentRequest?.commentText != undefined && this.commentRequest?.userID != undefined && this.commentRequest?.eventID != undefined) {
-    let status = await this.apiService.createEntity<CommentRequest>(this.commentRequest, "Comment");
-    if (status?.status == ResponseStatus.Ok) {
-      alert("Yorum Ekleme Başarılı");
-      this.getComments();
-      this.showCommentForm = false;
-      console.log(status);
-      
+  confirmDelete(id: any) {
+    const confirmDelete = window.confirm('Silmek istiyor musunuz?');
+    if (confirmDelete) {
+      let status = this.apiService.deleteEntity(id, Comment);
+      status.then((response) => {
+        if (response?.status == ResponseStatus.Ok) {
+          window.alert('Yorum silindi!');
+          this.getComments();
+          this.router.navigate(['admin/comments']);
+        } else {
+          window.alert('silme işleminde hata oluştu');
+        }
+      });
     } else {
-      alert("Yorum Ekleme Başarısız");
+      window.alert('Silme işlemi iptal edildi');
     }
-  } else {
-    alert("Lütfen tüm alanları doldurun");
   }
-}
 
-//YORUM GÜNCELLEME
-
-selectedComment: Comment | null = null;
-
-showUpdateForm(comment: Comment) {
-  this.selectedComment = comment;
-
-}
-
-updateComment() {
-  if (this.selectedComment) {
-    // Güncelleme verilerini API'ye gönderin
-    this.apiService.updateEntity(this.selectedComment.id!, this.selectedComment, Comment).then(response => {
-      if (response?.status === ResponseStatus.Ok) {
-        window.alert('İlan başarıyla güncellendi!');
-        // İlanları yeniden getirin veya güncel duruma göre ilanları güncelleyin
+  // Yorum Ekleme
+  async addComment() {
+    if (
+      this.commentRequest?.commentText != undefined &&
+      this.commentRequest?.userID != undefined &&
+      this.commentRequest?.eventID != undefined
+    ) {
+      let status = await this.apiService.createEntity<CommentRequest>(
+        this.commentRequest,
+        'Comment'
+      );
+      if (status?.status == ResponseStatus.Ok) {
+        alert('Yorum Ekleme Başarılı');
         this.getComments();
-        this.cancelUpdate(); // Güncelleme formunu kapat
+        this.showCommentForm = false;
+        console.log(status);
       } else {
-        window.alert('İlan güncellenirken hata oluştu.');
+        alert('Yorum Ekleme Başarısız');
       }
-    }).catch(error => {
-      console.error('Hata oluştu:', error);
-      window.alert('İlan güncellenirken hata oluştu.');
-    });
+    } else {
+      alert('Lütfen tüm alanları doldurun');
+    }
   }
-}
 
-cancelUpdate() {
-  this.selectedComment = null;
-}
+  //YORUM GÜNCELLEME
 
+  selectedComment: Comment | null = null;
 
+  showUpdateForm(comment: Comment) {
+    this.selectedComment = comment;
+  }
+
+  updateComment() {
+    if (this.selectedComment) {
+      // Güncelleme verilerini API'ye gönderin
+      this.apiService
+        .updateEntity(this.selectedComment.id!, this.selectedComment, Comment)
+        .then((response) => {
+          if (response?.status === ResponseStatus.Ok) {
+            window.alert('İlan başarıyla güncellendi!');
+            // İlanları yeniden getirin veya güncel duruma göre ilanları güncelleyin
+            this.getComments();
+            this.cancelUpdate(); // Güncelleme formunu kapat
+          } else {
+            window.alert('İlan güncellenirken hata oluştu.');
+          }
+        })
+        .catch((error) => {
+          console.error('Hata oluştu:', error);
+          window.alert('İlan güncellenirken hata oluştu.');
+        });
+    }
+  }
+
+  cancelUpdate() {
+    this.selectedComment = null;
+  }
 }

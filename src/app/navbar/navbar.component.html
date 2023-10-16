@@ -44,10 +44,17 @@
         <li *ngIf="!isLoggedIn" class="nav-item">
           <a class="nav-link mx-2" routerLink="/giris">Giriş</a>
         </li>
+        <li *ngIf="isLoggedIn && currentUser?.userType===0" class="nav-item">
+          <a class="nav-link mx-2" routerLink="/admin">Dashboard</a>
+        </li>
+        <li *ngIf="isLoggedIn && currentUser?.userType===1" class="nav-item">
+          <a class="nav-link mx-2" routerLink="/user">Dashboard</a>
+        </li>
+
         <li *ngIf="isLoggedIn" class="nav-item">
           <a class="nav-link mx-2" (click)="logOut()" routerLink="/anasayfa">Çıkış Yap</a>
         </li>
-        
+
 
 
       </ul>

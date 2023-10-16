@@ -6,10 +6,11 @@ import { LayoutsModule } from 'src/app/layouts/layouts.module';
 import { UserProfileModule } from './user-profile/user-profile.module';
 import { UserAdvertsModule } from './user-adverts/user-adverts.module';
 import { UserEventModule } from './user-event/user-event.module';
+import { UserCommentComponent } from './user-comment/user-comment.component';
 
 @NgModule({
   declarations: [
-    UserComponent,    
+    UserComponent,      
   ],
   imports: [
     CommonModule, 

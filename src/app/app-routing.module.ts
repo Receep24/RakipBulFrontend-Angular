@@ -129,6 +129,20 @@ const routes: Routes = [
             (m) => m.UserEventModule
           ),
       },
+      {
+        path: 'comments',
+        loadChildren: () =>
+          import('src/app/dashboard/user/user-comment/user-comment.module').then(
+            (m) => m.UserCommentModule
+          ),
+      },
+      {
+        path: 'adress',
+        loadChildren: () =>
+          import(
+            'src/app/dashboard/user/user-adress/user-adress.module'
+          ).then((m) => m.UserAdressModule),
+      },
     ],
   },
 

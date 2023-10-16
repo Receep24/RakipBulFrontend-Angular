@@ -37,25 +37,40 @@
   <h2 class="card-title">Yeni İlan Ekle</h2>
   <form>
     <div class="form-group">
-      <label for="advertText" class="label-text">İlan Açıklama</label>
+      <label for="advertText" style="color: gray;">İlan Açıklama</label>
       <input type="text" class="form-control" id="advertText" name="advertText" [(ngModel)]="newAdvert.advertText">
+    </div>   
+    <div class="form-group">
+      <label for="adress" style="color: gray; margin-top: 10px;">Kullanıcı Seçimi</label>
+      <select id="adress" style="border: 1px solid gray;" [(ngModel)]="newAdvert.userID"
+        [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let user of users" [value]="user.id">{{ user.userName }}</option>
+      </select>
     </div>
     <div class="form-group">
-      <label for="userID" class="label-text">Kullanıcı</label>
-      <input type="number" class="form-control" id="userID" name="userID" [(ngModel)]="newAdvert.userID">
-    </div>
+      <label for="adress" style="color: gray; margin-top: 10px;">Spor Seçimi</label>
+      <select id="adress" style="border: 1px solid gray;" [(ngModel)]="newAdvert.sportID"
+        [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let sport of sports" [value]="sport.id">{{ sport.sportName }}</option>
+      </select>
+    </div>    
     <div class="form-group">
-      <label for="sportID" class="label-text">Spor</label>
-      <input type="number" class="form-control" id="sportID" name="sportID" [(ngModel)]="newAdvert.sportID">
+      <label for="adress" style="color: gray; margin-top: 10px;">Adres Seçimi</label>
+      <select id="adress" style="border: 1px solid gray;" [(ngModel)]="newAdvert.adressID"
+        [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let adress of adresses" [value]="adress.id">{{ adress.adressName }}</option>
+      </select>
+    </div>          
+   
+    <div style="margin-top: 15px; width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center;">
+      <div style="width: 50%;">
+        <button type="button" (click)="cancelAdd()" class="btn btn-secondary" style="width: 100%;">İptal</button>
+      </div>
+      <div style="width: 50%; margin-top: 10px;">
+        <button type="button" (click)="addAdvert()" class="btn btn-primary" style="width: 100%;">Kaydet</button>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="adressID" class="label-text">Adres</label>
-      <input type="number" class="form-control" id="adressID" name="adressID" [(ngModel)]="newAdvert.adressID">
-    </div>
-    <div class="button-container">
-      <button type="button" (click)="cancelAdd()" class="btn btn-secondary">İptal</button>
-      <button type="button" (click)="addAdvert()" class="btn btn-primary">Kaydet</button>
-    </div>
+
   </form>
 </div>
 

@@ -1,20 +1,20 @@
 <app-navbar></app-navbar>
 <div class="container mb-5" style="margin-top: 100px;">
-  <div class="row row-cols-1 row-cols-md-2 g-4" >
-    <div class="col" *ngFor="let advert of adverts" >
-      <div class="card" >
-        <img src="{{advert.sport?.sportImage}}" class="card-img-top" alt="SportImage">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col" *ngFor="let advert of adverts">
+      <div class="card" (click)="selectAdvert(advert)" >
+        <img src="{{advert.sport?.sportImage}}"  class="card-img-top" alt="SportImage">
         <div class="card-body">
           <h5 class="card-title">{{advert.advertText}}</h5>
           <P>asdas</P>
-          <p class="card-text">{{advert.sport!.sportName}}</p>
+
+          <p class="card-text" >{{advert.sport!.sportName}}</p>
           <P>{{advert.adress?.city?.cityName}}</P>
           <P>{{advert.adress?.district?.districtName}}</P>
-        
-          <a style="color: aliceblue;" class="btn bg-primary" href="#">Teklif Ver</a>
+          <a style="color: aliceblue;" class="btn bg-primary" *ngIf="userControl()" (click)="addUserEvent()" >Etkinliğe Katıl</a>
         </div>
       </div>
     </div>
   </div>
-  </div>
-  <app-footer></app-footer>
+</div>
+<app-footer></app-footer>

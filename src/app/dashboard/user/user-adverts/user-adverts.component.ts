@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Adress } from 'src/core/models/adress.model';
 import { Advert } from 'src/core/models/advert.model';
 import { AdvertRequest } from 'src/core/models/request/advert-request.model';
 import { ResponseStatus } from 'src/core/models/response/base-response.model';
+import { Sports } from 'src/core/models/sports.model';
+import { User } from 'src/core/models/user.model';
 import { ApiService } from 'src/core/services/api/api.service';
 
 @Component({
@@ -15,11 +18,23 @@ export class UserAdvertsComponent {
   constructor(private readonly apiService: ApiService,
     private router: Router) { }
 
-  adverts: Advert[] = [];
-  ngOnInit() {
-    this.getAdverts();
-  }
-
+    adverts: Advert[] = [];
+    users: User[] = [];
+    sports: Sports[] = [];
+    adresses: Adress[] = [];
+    ngOnInit() {
+      this.getAdverts();
+      this.apiService.getAllEntities(User).subscribe((response) => {
+        this.users = response.data;
+        console.log(this.users);
+      });
+      this.apiService.getAllEntities(Sports).subscribe((response) => {
+        this.sports = response.data;
+      });
+      this.apiService.getAllEntities(Adress).subscribe((response) => {
+        this.adresses = response.data;
+      });
+    }
   getAdverts() {
     this.apiService.getAllEntities(Advert).subscribe((response) => {
       this.adverts = response.data;
