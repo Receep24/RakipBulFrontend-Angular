@@ -101,7 +101,7 @@
                   <label for="gender" class="form-label text-secondary fs-6">Gender</label>
                   <select [(ngModel)]="registerRequest.Gender" [ngModelOptions]="{ standalone: true }"
                     class="form-select border border-secondary-subtle" id="gender">
-                    <option [ngValue]="'Male'">Male</option>
+                    <option [ngValue]="registerRequest.Gender">Male</option>
                     <option [ngValue]="'Female'">Female</option>
                   </select>
                 </div>

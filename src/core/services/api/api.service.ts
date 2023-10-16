@@ -146,4 +146,17 @@ export class ApiService {
       );
   }
 
+  getDistrictsByCityId(cityId: number): Observable<Districts[]> {
+    // API çağrısı için gerekli URL oluşturuluyor
+    const url = `${environment.api_url}/Districts/GetDistrictsByCityId/bycity/${cityId}`;
+    // Oluşturulan URL, veri almak için kullanılacak URL'yi temsil eder.
+
+    // HTTP GET isteği ile ilçe verilerini çeker ve bir Observable döner
+    return this.http.get<Districts[]>(url).pipe(share());
+    // Bu kısımda, oluşturulan URL'ye bir HTTP GET isteği yapılır ve ilçe verilerini getirir.
+    // Veriler bir Observable içinde döner, böylece verileri talep eden diğer yerlerde kullanabiliriz.
+    // Ayrıca, 'pipe()' işlevi ile verileri paylaşılabilir yapar, bu da aynı verilere birden fazla abone olunabilmesini sağlar.
+}
+
+
 }

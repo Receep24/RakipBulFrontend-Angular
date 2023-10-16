@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ResponseStatus } from 'src/core/models/response/base-response.model';
-import { User } from 'src/core/models/user.model';
+import { User, UserType } from 'src/core/models/user.model';
 import { ApiService } from 'src/core/services/api/api.service';
 import { AuthService } from 'src/core/services/auth/auth.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -27,7 +27,7 @@ export class AdminUsersComponent implements OnInit {
   }
   getUsers() {
     this.apiService.getAllEntities(User).subscribe((response) => {
-      this.users = response.data;
+      this.users = response.data;      
       console.log(this.users);
     });
   }
@@ -97,4 +97,6 @@ export class AdminUsersComponent implements OnInit {
   closePopup() {
     this.isPopupOpen = false;
   }
+
+
 }
