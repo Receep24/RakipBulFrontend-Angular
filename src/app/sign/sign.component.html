@@ -41,6 +41,10 @@
                 style="width: 400px;">Giriş yap</button>
             </div>
             <div class="mb-3 container d-flex justify-content-center">
+              <button (click)="openForgotForm()" type="button" class="btn btn-primary align-items-center"
+                style="width: 400px;">Şifremi unuttum</button>
+            </div>
+            <div class="mb-3 container d-flex justify-content-center">
               <label for="or" class="form-label text-secondary fs-6">veya</label>
             </div>
             <div class="mb-3 container d-flex justify-content-center">
@@ -57,10 +61,6 @@
               <button id="twitterBtn" type="button" class="btn align-items-center"
                 style="width: 400px; background-color: #0098C2; color: #ffff;">
                 <i class="fab fa-twitter"></i> Twitter</button>
-            </div>
-            <div class="mb-3 container d-flex justify-content-center">
-              <button id="githubBtn" type="button" class="btn btn-dark align-items-center" style="width: 400px;">
-                <i class="fab fa-github"></i> Github</button>
             </div>
           </form>
         </div>
@@ -146,6 +146,62 @@
 
   </div>
 
+</div>
+
+
+<div class="modal-overlay" *ngIf="forgotPw">
+  <div class="modal-dialog">
+    <h2>Şifremi Unuttum</h2>
+    <div>
+      <form *ngIf="!mailCheck&&!codeCheck">
+
+        <div class="form-group">
+          <label style="color: black;">Email Adresiniz</label>
+          <input style="border: 1px solid gray" [(ngModel)]="mail!.recepients" [ngModelOptions]="{standalone: true}"
+            type="email" class="form-control" required>
+        </div>
+
+        <button (click)="codeSenderMail()" class="btn btn-success">Onay Kodu
+          Al</button>
+
+      </form>
+
+      <form *ngIf="mailCheck">
+        <div>
+          Onay Kodunu giriniz
+        </div>
+        <div class="form-group">
+          <label> Onay Şifresi</label>
+          <input style="border: 1px solid gray" [(ngModel)]="confirmInput" [ngModelOptions]="{standalone:true}"
+            type="text" class="form-control" required>
+        </div>
+        <button (click)="confirmCodeMethod()" class="btn btn-success">Onay Kodunu
+          Onayla</button>
+      </form>
+      <form *ngIf="codeCheck">
+        <div class="form-group">
+          <label>Email</label>
+          <input style="border: 1px solid gray" [(ngModel)]="mail!.recepients" [ngModelOptions]="{standalone:true}"
+            type="text" class="form-control" required readonly>
+        </div>
+        <div>
+          Yeni Şifrenizi giriniz
+        </div>
+        <div class="form-group">
+          <label>Şifre</label>
+          <input style="border: 1px solid gray" [(ngModel)]="pw!.password" [ngModelOptions]="{standalone:true}"
+            type="password" class="form-control" required>
+        </div>
+        <button (click)="changePassword()" class="btn btn-success">Şifreyi Değiştir</button>
+      </form>
+      <br>
+
+    </div>
+    <br>
+
+    <button (click)="closeForgotForm()">Kapat</button>
+      
+  </div>
 </div>
 
 <script>

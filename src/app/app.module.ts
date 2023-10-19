@@ -28,6 +28,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
 import { LayoutsModule } from './layouts/layouts.module';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -47,6 +48,7 @@ import { LayoutsModule } from './layouts/layouts.module';
     EtkinlikComponent,
     ProfileComponent,
     CommentComponent,
+    ContactComponent,
     NotfoundComponent,
   ],
   imports: [

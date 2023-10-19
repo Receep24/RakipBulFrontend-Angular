@@ -8,15 +8,13 @@ import { LoginRequest } from '../../models/request/login-request.model';
 import { RegisterRequest } from '../../models/request/register-request.model';
 import { User } from '../../models/user.model';
 
-
-
 import { BaseResponse } from 'src/core/models/response/base-response.model';
 import { Advert } from 'src/core/models/advert.model';
 import { Comment } from 'src/core/models/comment.model';
 import { Districts } from 'src/core/models/districts.model';
 import { Cities } from 'src/core/models/cities.model';
-
-
+import { MailRequest } from 'src/core/models/request/mail-request-model';
+import { PasswordRequest } from 'src/core/models/request/pw-request-model';
 
 @Injectable({
   providedIn: 'root',
@@ -88,30 +86,45 @@ export class ApiService {
   }
 
   getAllEntities<TEntity>(entityType: Type<TEntity>) {
-    return this.http.request<BaseDataResponse<TEntity[]>>
-      ("get", environment.api_url + "/" + entityType.name + "/GetAll").pipe(share());
+    return this.http
+      .request<BaseDataResponse<TEntity[]>>(
+        'get',
+        environment.api_url + '/' + entityType.name + '/GetAll'
+      )
+      .pipe(share());
   }
-
 
   deleteEntity<TEntity>(id: number, entityType: Type<TEntity>) {
-    return this.http.delete<BaseResponse>
-      (environment.api_url + "/" + entityType.name + "/Delete?id=" + id)
-      .pipe(share()).toPromise();
+    return this.http
+      .delete<BaseResponse>(
+        environment.api_url + '/' + entityType.name + '/Delete?id=' + id
+      )
+      .pipe(share())
+      .toPromise();
   }
 
-
-   //Ekleme kodları
-   createEntity<TEntity>(entity: TEntity, entityType: string) {
-    return this.http.post<BaseDataResponse<TEntity[]>>(environment.api_url + "/" + entityType + "/Create", entity).pipe(share()).toPromise();
+  //Ekleme kodları
+  createEntity<TEntity>(entity: TEntity, entityType: string) {
+    return this.http
+      .post<BaseDataResponse<TEntity[]>>(
+        environment.api_url + '/' + entityType + '/Create',
+        entity
+      )
+      .pipe(share())
+      .toPromise();
   }
 
   //Silme kodları
 
-
   //GetById kodları
 
   getEntityById<TEntity>(id: number, entityType: Type<TEntity>) {
-    return this.http.get<BaseDataResponse<TEntity>>(`${environment.api_url}/${entityType.name}/GetById?id=${id}`).pipe(share()).toPromise();
+    return this.http
+      .get<BaseDataResponse<TEntity>>(
+        `${environment.api_url}/${entityType.name}/GetById?id=${id}`
+      )
+      .pipe(share())
+      .toPromise();
   }
   //Get by Id kodları
   // getEntityById<TEntity>(id: number, entityType: Type<TEntity>) {
@@ -119,13 +132,25 @@ export class ApiService {
   // }
 
   //Güncelleme kodları
-  updateEntity<TEntity>(id: number, entity: TEntity, entityType: Type<TEntity>) {
-    return this.http.put<BaseDataResponse<TEntity>>(environment.api_url + "/" + entityType.name + "/Update?id=" + id, entity).pipe(share()).toPromise();
+  updateEntity<TEntity>(
+    id: number,
+    entity: TEntity,
+    entityType: Type<TEntity>
+  ) {
+    return this.http
+      .put<BaseDataResponse<TEntity>>(
+        environment.api_url + '/' + entityType.name + '/Update?id=' + id,
+        entity
+      )
+      .pipe(share())
+      .toPromise();
   }
 
   getCity(cityId: number): Observable<BaseDataResponse<Cities>> {
     return this.http
-      .get<BaseDataResponse<Cities>>(`${this.endpoint}/Cities/GetById?id=${cityId}`)
+      .get<BaseDataResponse<Cities>>(
+        `${this.endpoint}/Cities/GetById?id=${cityId}`
+      )
       .pipe(
         map((result) => {
           return result;
@@ -156,7 +181,16 @@ export class ApiService {
     // Bu kısımda, oluşturulan URL'ye bir HTTP GET isteği yapılır ve ilçe verilerini getirir.
     // Veriler bir Observable içinde döner, böylece verileri talep eden diğer yerlerde kullanabiliriz.
     // Ayrıca, 'pipe()' işlevi ile verileri paylaşılabilir yapar, bu da aynı verilere birden fazla abone olunabilmesini sağlar.
-}
+  }
 
+  mailSender(mail: MailRequest): Observable<any> {
+    return this.http.post(`${this.endpoint}/Mail/SendMail`, mail);
+  }
 
+  pwChanger(pw: PasswordRequest) {
+    return this.http
+      .put<BaseDataResponse<User>>(`${this.endpoint}/User/ChangePassword`, pw)
+      .pipe(share())
+      .toPromise();
+  }
 }

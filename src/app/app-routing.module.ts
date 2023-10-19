@@ -12,6 +12,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { AdminYorumComponent } from './dashboard/admin/admin-yorum/admin-yorum.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { UserComponent } from './dashboard/user/user.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: '', component: AnasayfaComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'etkinlik', component: EtkinlikComponent },
   { path: 'profildetail', component: ProfileComponent },
   { path: 'comment', component: CommentComponent },
+  { path: 'contact', component: ContactComponent },
 
   //   path: 'admin': Bu rota, "/admin" URL'sine eşlenir. Yani, bu rota sadece "/admin" URL'sinde çalışır.
 
@@ -132,16 +134,16 @@ const routes: Routes = [
       {
         path: 'comments',
         loadChildren: () =>
-          import('src/app/dashboard/user/user-comment/user-comment.module').then(
-            (m) => m.UserCommentModule
-          ),
+          import(
+            'src/app/dashboard/user/user-comment/user-comment.module'
+          ).then((m) => m.UserCommentModule),
       },
       {
         path: 'adress',
         loadChildren: () =>
-          import(
-            'src/app/dashboard/user/user-adress/user-adress.module'
-          ).then((m) => m.UserAdressModule),
+          import('src/app/dashboard/user/user-adress/user-adress.module').then(
+            (m) => m.UserAdressModule
+          ),
       },
     ],
   },
