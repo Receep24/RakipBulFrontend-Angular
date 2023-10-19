@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="contact-form">
+    <h2>İletişim Formu</h2>
+    <form (submit)="sendEmail()">
+      <div class="form-group">
+        <label for="name">Ad:</label>
+        <input type="text" id="name" [(ngModel)]="name" name="name" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="surname">Soyad:</label>
+        <input type="text" id="surname" [(ngModel)]="surname" name="surname" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">E-posta Adresi:</label>
+        <input type="email" id="email" [(ngModel)]="email" name="email" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="message">Mesajınız:</label>
+        <textarea id="message" [(ngModel)]="mailMessage" name="message" required></textarea>
+      </div>
+  
+      <div class="error-message" *ngIf="message">{{ message }}</div>
+  
+      <button type="submit">Gönder</button>
+    </form>
+  </div>
+
+
+<app-footer></app-footer>

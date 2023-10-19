@@ -42,6 +42,9 @@
           <a class="nav-link mx-2" routerLink="/profildetail">Profil Detay</a>
         </li>
         <li *ngIf="!isLoggedIn" class="nav-item">
+          <a class="nav-link mx-2" routerLink="/contact">İletişim</a>
+        </li>
+        <li *ngIf="!isLoggedIn" class="nav-item">
           <a class="nav-link mx-2" routerLink="/giris">Giriş</a>
         </li>
         <li *ngIf="isLoggedIn && currentUser?.userType===0" class="nav-item">
@@ -54,6 +57,8 @@
         <li *ngIf="isLoggedIn" class="nav-item">
           <a class="nav-link mx-2" (click)="logOut()" routerLink="/anasayfa">Çıkış Yap</a>
         </li>
+
+
 
 
 
