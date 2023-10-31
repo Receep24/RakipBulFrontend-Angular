@@ -1,0 +1,87 @@
+<section style="background-color: #ffffff;">
+    <div class="projcard projcard-blue" *ngIf="user">
+        <div class="projcard-innerbox">
+            <div class="container py-5">
+                <div class="row profile">
+                    <div class="col-lg-4">
+                        <div class="card mb-4">
+                            <div class="card-body text-center">
+                                <img src="{{user.userImage}}" alt="" class="img-fluid" style="width: 200px;">
+                                <h5 class="my-3">{{user.userName}}</h5>
+                                <p class="text-muted mb-4"></p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <p class="mb-0">Ad Soyad</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p class="text-muted mb-0">{{user.firstName}} {{user.lastName}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <p class="mb-0">Email</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p class="text-muted mb-0">{{user.email}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <p class="mb-0">Phone</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p class="text-muted mb-0">{{user.phoneNumber}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" (click)="openEditProfileModal(editProfileContent)">Profili
+                        Düzenle</button>
+                    <ng-template class="model-overlay" #editProfileContent let-modal>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Edit Profile</h4>
+                            <button type="button" class="close" (click)="modal.dismiss('Cross click')">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-dialog" >
+                            <!-- Form for editing user information -->
+                            <!-- Replace this with your form fields -->
+                            <form>
+                                <div class="form-group">
+                                    <label for="firstName" style="color: black;">First Name</label>
+                                    <input type="text" id="firstName" class="form-control" [(ngModel)]="user.firstName"
+                                        [ngModelOptions]="{ standalone: true }">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName" style="color: black;">Last Name</label>
+                                    <input type="text" id="lastName" class="form-control" [(ngModel)]="user.lastName"
+                                        [ngModelOptions]="{ standalone: true }">
+                                </div>                               
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" (click)="updateUser()">Save</button>
+                            <button type="button" class="btn btn-secondary"
+                                (click)="modal.dismiss('Cross click')">Close</button>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

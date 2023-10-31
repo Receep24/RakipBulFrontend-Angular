@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+  }
+  
+
+  
+  .content {
+    flex-grow: 1;
+    /* Other styles for the content area */
+  }
+  

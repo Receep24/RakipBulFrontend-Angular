@@ -1,0 +1,42 @@
+.contact-form {
+    background-color: #f2f2f2; /* Formun arka plan rengi */
+    padding: 20px; /* Formun iç içe olduğu alanı belirler */
+    border: 1px solid #ccc; /* Formun kenarlık rengi ve kalınlığı */
+  }
+  
+  .form-group {
+    margin-bottom: 15px; /* Her form grubu (label ve input) arasındaki boşluk */
+  }
+  
+  label {
+    display: block; /* Her label'ı yeni bir satıra alır */
+    margin-bottom: 5px; /* Label ile input arasındaki boşluk */
+    color :black
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%; /* Input alanlarının tam genişlikte olmasını sağlar */
+    padding: 10px; /* Input alanlarının iç içe olduğu alanı belirler */
+    margin-bottom: 10px; /* Input alanları arasındaki boşluk */
+    border: 1px solid #ccc; /* Input alanlarının kenarlık rengi ve kalınlığı */
+    color:black
+  }
+  
+  .error-message {
+    color: red; /* Hata mesajının metin rengi */
+  }
+  
+  button {
+    background-color: #007bff; /* Gönder düğmesinin arka plan rengi */
+    color: #fff; /* Gönder düğmesinin metin rengi */
+    padding: 10px 20px; /* Gönder düğmesinin iç içe olduğu alanı belirler */
+    border: none; /* Gönder düğmesinin kenarlığını kaldırır */
+    cursor: pointer; /* Gönder düğmesinin imleç tipini değiştirir */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Gönder düğmesinin üzerine gelindiğindeki arka plan rengi */
+  }
+  

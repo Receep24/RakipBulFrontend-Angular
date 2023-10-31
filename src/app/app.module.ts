@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -13,12 +12,23 @@ import { RouterModule } from '@angular/router';
 import { AnasayfaComponent } from './anasayfa/anasayfa.component';
 import { IlanlarComponent } from './ilanlar/ilanlar.component';
 import { GirisComponent } from './giris/giris.component';
-
 import { EtkinlikComponent } from './etkinlik/etkinlik.component';
-
 import { ProfileComponent } from './profile/profile.component';
-import { AdminComponent } from './admin/admin.component';
-import { MainComponent } from './admin/main/main.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+
+
+import { CommentComponent } from './comment/comment.component';
+import { JwtInterceptor } from 'src/core/services/interceptor/jwt.interceptor';
+import { NotfoundComponent } from './notfound/notfound.component';
+
+import { DashboardModule } from './dashboard/dashboard.module';
+
+import { AppRoutingModule } from './app-routing.module';
+
+import { FormsModule } from '@angular/forms';
+
+import { LayoutsModule } from './layouts/layouts.module';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -35,21 +45,24 @@ import { MainComponent } from './admin/main/main.component';
     AnasayfaComponent,
     IlanlarComponent,
     GirisComponent,
-
     EtkinlikComponent,
-
     ProfileComponent,
-    AdminComponent,
-    MainComponent
-
-
+    CommentComponent,
+    ContactComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    FormsModule,
+    DashboardModule,
+    LayoutsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

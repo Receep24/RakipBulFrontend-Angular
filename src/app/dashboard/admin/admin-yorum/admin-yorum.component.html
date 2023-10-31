@@ -1,0 +1,107 @@
+<main id="main" class="main">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>Yorum İçerik</th>
+              <th>Kullanıcı</th>
+              <th>Spor</th>
+              <th>Sil / Güncelle</th>
+              <!-- Diğer sütun başlıkları -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of comments">
+              <td>{{ item.commentText}}</td>
+              <td>{{ item.user?.userName}}</td>
+              <td>{{ item.events?.eventName}}</td>
+
+
+              <td>
+                <button class="btn btn-danger" (click)="confirmDelete(item.id)">SİL</button>
+                <button class="btn btn-warning" (click)="showUpdateForm(item)">GÜNCELLE</button>
+              </td>
+              <!-- Diğer sütunlar için verileri ekle -->
+            </tr>
+
+          </tbody>
+          <button class="btn btn-success mt-3" (click)="showCommentFormOnClick()">Yorum Yap</button>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div *ngIf="showCommentForm" class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <!-- YORUM EKLEME  -->
+      <form (ngSubmit)="addComment()">
+        <div class="mb-3">
+          <label for="commentText" class="form-label">Yorumunuz</label>
+          <input type="text" class="form-control" id="commentText" style="border: 1px solid gray;"
+            [(ngModel)]="commentRequest.commentText" name="commentText" required>
+        </div>
+        <div class="mb-3">
+          <label for="adress" class="form-label">Kullanıcı Seçimi</label>
+          <select id="adress" style="border: 1px solid gray;" [(ngModel)]="commentRequest.userID"
+            [ngModelOptions]="{standalone: true}">
+            <option *ngFor="let users of user" [value]="users.id">{{ users.userName }}</option>
+          </select>
+        </div>       
+        <div class="mb-3">
+          <label for="adress" class="form-label">Etkinlik Seçimi</label>
+          <select id="adress" style="border: 1px solid gray;" [(ngModel)]="commentRequest.eventID"
+            [ngModelOptions]="{standalone: true}">
+            <option *ngFor="let event of events" [value]="event.id">{{ event.eventName }}</option>
+          </select>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Yorum Ekle</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- YORUM GÜNCELLEME -->
+<div *ngIf="selectedComment" class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2 style="margin-top: 15px;">İlan Güncelle</h2>
+      <form>
+        <!-- Güncelleme için gerekli input alanları burada olmalı -->
+        <div class="form-group">
+          <label for="updatedAdvertText" style="color: gray;">İlan Açıklama</label>
+          <input type="text" class="form-control" id="updatedAdvertText" name="updatedAdvertText"
+            [(ngModel)]="selectedComment.commentText">
+        </div>
+
+        <div class="form-group">
+          <label for="updatedUserId" style="color: gray;">Kullanıcı</label>
+          <input type="number" class="form-control" id="updatedUserId" name="updatedUserId"
+            [(ngModel)]="selectedComment.userID">
+        </div>
+
+        <div class="form-group">
+          <label for="updatedSportId" style="color: gray;">Spor</label>
+          <input type="number" class="form-control" id="updatedSportId" name="updatedSportId"
+            [(ngModel)]="selectedComment.eventID">
+        </div>
+        <!-- Diğer güncelleme alanlarını burada ekleyin -->
+        <div
+          style="margin-top: 15px; width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 50%;">
+            <button type="button" (click)="cancelUpdate()" class="btn btn-secondary" style="width: 100%;">İptal</button>
+          </div>
+          <div style="width: 50%; margin-top: 10px;">
+            <button type="button" (click)="updateComment()" class="btn btn-primary" style="width: 100%;">Kaydet</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

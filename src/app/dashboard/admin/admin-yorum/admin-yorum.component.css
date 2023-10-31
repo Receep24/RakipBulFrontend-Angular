@@ -1,0 +1,39 @@
+.form-label {
+  font-weight: bold;
+}
+
+/* Input alanlarının stilini ayarla */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Butonun stilini ayarla */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Butona hover efekti ekle */
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Formun içeriğini ortala */
+.row {
+  text-align: center;
+}
+label {
+  color: black;
+
+}
+button {
+  margin-right: 10px;
+}

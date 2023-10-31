@@ -1,0 +1,133 @@
+<div class="container" style="width: 100%; margin-left: 200px;">
+  <main id="main" class="main">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Etkinlik Adı</th>
+          <th>Etkinlik Sahibi</th>
+          <th>Tarih</th>
+          <th>İl</th>
+          <th>İlçe</th>
+          <th>Spor Türü</th>
+          <th>Sil / Güncelle</th>
+          <!-- Diğer sütun başlıkları -->
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let userEvent of filteredUserEvents"  >
+          <td>{{ userEvent.events?.eventName  }}</td>
+          <td>{{ userEvent.user?.userName }}</td>
+          <td>{{ userEvent.events?.eventDate | date }}</td>
+          <td>{{ userEvent.events?.adress?.city?.cityName }}</td>
+          <td>{{ userEvent.events?.adress?.district?.districtName }}</td>
+          <td>{{ userEvent.events?.sports?.sportName }}</td>
+          <td>
+            <div class="button-group">
+              <button (click)="confirmDelete(userEvent.events?.id)" class="btn btn-danger"
+                style="width: 8rem; margin-right: 15px;">Sil</button>
+              <button (click)="showUpdateForm(userEvent)" class="btn btn-warning" style="width: 8rem;">Güncelle</button>
+            </div>
+          </td>
+          <!-- Diğer sütunlar için verileri ekle -->
+        </tr>
+      </tbody>
+    </table>
+
+    <button (click)="showAddForm = true" class="btn btn-success" style="width: 8rem; margin-right: 15px;">Ekle</button>
+
+
+
+    <div class="modal-overlay" *ngIf="showAddForm">
+      <div class="modal-dialog">
+        <h2 style="margin-top: 15px;">Yeni Etkinlik Ekle</h2>
+        <form>
+          <div class="form-group">
+            <label for="eventText" style="color: gray;">Etkinlik Adı</label>
+            <input type="text" class="form-control" id="eventText" name="eventText" [(ngModel)]="newEvents.EventName"
+              [ngModelOptions]="{standalone: true}">
+          </div>
+
+          <div class="form-group">
+            <label for="eventDate" style="color: gray; margin-top: 10px;">Etkinlik Tarihi</label>
+            <input type="datetime-local" class="form-control" id="eventDate" name="eventDate"
+              [(ngModel)]="newEvents.EventDate" [ngModelOptions]="{standalone: true}">
+          </div>
+
+
+          <div class="form-group">
+            <label for="adress" style="color: gray; margin-top: 10px;">Spor Seçimi</label>
+            <select id="adress" style="border: 1px solid gray;" [(ngModel)]="newEvents.SportID"
+              [ngModelOptions]="{standalone: true}">
+              <option *ngFor="let sport of sports" [value]="sport.id">{{ sport.sportName }}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="adress" style="color: gray; margin-top: 10px; ">Adres Seçimi</label>
+            <select id="adress" style="border: 1px solid gray;" [(ngModel)]="newEvents.AdressID"
+              [ngModelOptions]="{standalone: true}">
+              <option *ngFor="let adresses of adressToShow" [value]="adresses.id">{{ adresses.adressName }}</option>
+            </select>
+          </div>
+
+
+          <div
+            style="margin-top: 15px; width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 50%;">
+              <button type="button" (click)="cancelAdd()" class="btn btn-secondary" style="width: 100%;">İptal</button>
+            </div>
+            <div style="width: 50%; margin-top: 10px;">
+              <button type="button" (click)="addEvents()" class="btn btn-primary" style="width: 100%;">Ekle</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>   
+    <div class="modal-overlay" *ngIf="updateShowForm">
+      <div class="modal-dialog">
+        <div *ngIf="selectedEvents">
+          <h2 style="margin-top: 15px;">Etkinlik Güncelle</h2>
+          <form>
+            <!-- Güncelleme için gerekli input alanları burada olmalı -->
+            <div class="form-group">
+              <label for="updatedEventsText" style="color: gray; margin-top: 10px;">Etkinlik</label>
+              <input type="text" class="form-control" id="updatedEventsText" name="updatedEventsText"
+                [(ngModel)]="selectedEvents.eventName">
+            </div>
+
+            <div class="form-group">
+              <label for="updatedEventsDate" style="color: gray; margin-top: 10px;">Etkinlik Tarihi</label>
+              <input type="text" class="form-control" id="updatedEventsDate" name="updatedEventsDate"
+                [(ngModel)]="selectedEvents.eventDate">
+            </div>
+
+            <div class="form-group">
+              <label for="updatedAdressId" style="color: gray; margin-top: 10px;">Adres</label>
+              <input type="number" class="form-control" id="updatedAdressId" name="updatedAdressId"
+                [(ngModel)]="selectedEvents.adressID">
+            </div>
+
+            <div class="form-group">
+              <label for="updatedSportId" style="color: gray; margin-top: 10px;">Spor</label>
+              <input type="number" class="form-control" id="updatedSportId" name="updatedSportId"
+                [(ngModel)]="selectedEvents.sportID">
+            </div>
+
+            <!-- Diğer güncelleme alanlarını burada ekleyin -->
+            <div
+              style="margin-top: 15px; width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center;">
+              <div style="width: 50%;">
+                <button type="button" (click)="cancelUpdate()" class="btn btn-secondary"
+                  style="width: 100%;">İptal</button>
+              </div>
+              <div style="width: 50%; margin-top: 10px;">
+                <button type="button" (click)="updateEvents()" class="btn btn-primary"
+                  style="width: 100%;">Kaydet</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

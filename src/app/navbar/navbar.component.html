@@ -1,13 +1,68 @@
-<header id="header">
-  <h1 id="logo"><a href="index.html"><span><img src="https://i.pinimg.com/originals/f3/10/13/f310137ff80cddb1010ecd94f844ac76.png" alt=""></span>RAKİP BUL</a></h1>
+<!-- <header id="header">
+  <h1 id="logo"><a href="index.html"><span><img
+          src="https://i.pinimg.com/originals/f3/10/13/f310137ff80cddb1010ecd94f844ac76.png" alt=""></span>RAKİP BUL</a>
+  </h1>
   <nav id="nav">
-    <ul>     
+    <ul>
       <li><a routerLink="/anasayfa">Anasayfa</a></li>
       <li><a routerLink="/ilanlar">İlanlar</a></li>
-      <li><a routerLink="/etkinlik">Etkinlikler</a></li>     
+      <li><a routerLink="/etkinlik">Etkinlikler</a></li>
       <li><a routerLink="/profildetail">Profil Detay </a></li>
       <li><a routerLink="/giris" class="button primary">Giriş</a></li>
     </ul>
   </nav>
 </header>
+ -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+  <div class="container-fluid">
+    <div class="logo" style="margin-top: 10px;">
+      <h1 id="logo"><a href="index.html"><span><img
+              src="https://i.pinimg.com/originals/f3/10/13/f310137ff80cddb1010ecd94f844ac76.png" alt=""></span>RAKİP
+          BUL</a>
+      </h1>
+    </div>
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto ">
+        <li class="nav-item">
+          <a class="nav-link mx-2" routerLink="/ilan">İlanlar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" routerLink="/anasayfa">Anasayfa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" routerLink="/etkinlik">Etkinlikler</a>
+        </li>
+        <li *ngIf="isLoggedIn" class="nav-item">
+          <a class="nav-link mx-2" routerLink="/profildetail">Profil Detay</a>
+        </li>
+        <li *ngIf="!isLoggedIn" class="nav-item">
+          <a class="nav-link mx-2" routerLink="/contact">İletişim</a>
+        </li>
+        <li *ngIf="!isLoggedIn" class="nav-item">
+          <a class="nav-link mx-2" routerLink="/giris">Giriş</a>
+        </li>
+        <li *ngIf="isLoggedIn && currentUser?.userType===0" class="nav-item">
+          <a class="nav-link mx-2" routerLink="/admin">Dashboard</a>
+        </li>
+        <li *ngIf="isLoggedIn && currentUser?.userType===1" class="nav-item">
+          <a class="nav-link mx-2" routerLink="/user">Dashboard</a>
+        </li>
+
+        <li *ngIf="isLoggedIn" class="nav-item">
+          <a class="nav-link mx-2" (click)="logOut()" routerLink="/anasayfa">Çıkış Yap</a>
+        </li>
+
+
+
+
+
+      </ul>
+    </div>
+  </div>
+</nav>

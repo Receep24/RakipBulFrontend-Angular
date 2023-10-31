@@ -1,0 +1,26 @@
+
+.modal-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); 
+  z-index: 1000; 
+  pointer-events: auto
+}
+
+
+.modal-dialog {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 400px;
+  z-index: 9999;
+  pointer-events: auto /*modala tıklanabilirlik ekliyor*/
+}
+
